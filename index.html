@@ -1,314 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Antreyart Store | A little art in everything</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-:root{
---purple:#7A58C1;
---purple-light:#A785E8;
---yellow:#FFD84D;
---cream:#FFF9EE;
---peach:#FFD5A9;
---text:#353535;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Quicksand',sans-serif;
-background:var(--cream);
-color:var(--text);
-overflow-x:hidden;
-}
-
-.glow1{
-position:fixed;
-width:500px;
-height:500px;
-background:#b08efb;
-opacity:.15;
-filter:blur(120px);
-top:-100px;
-left:-120px;
-z-index:-1;
-}
-
-.glow2{
-position:fixed;
-width:500px;
-height:500px;
-background:#ffd84d;
-opacity:.15;
-filter:blur(140px);
-bottom:-120px;
-right:-120px;
-z-index:-1;
-}
-
-nav{
-position:fixed;
-top:15px;
-left:50%;
-transform:translateX(-50%);
-width:92%;
-max-width:1250px;
-padding:18px 25px;
-background:rgba(255,255,255,.6);
-backdrop-filter:blur(20px);
-border-radius:30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:999;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-}
-
-.logo{
-font-family:'Fredoka',sans-serif;
-font-size:1.4rem;
-font-weight:600;
-color:var(--purple);
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#444;
-font-weight:600;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:120px 8%;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.hero-content{
-flex:1;
-min-width:320px;
-}
-
-.hero-content h1{
-font-family:'Fredoka',sans-serif;
-font-size:4.7rem;
-line-height:1;
-color:var(--purple);
-margin-bottom:25px;
-}
-
-.hero-content p{
-font-size:1.15rem;
-line-height:1.8;
-max-width:600px;
-}
-
-.hero-buttons{
-margin-top:35px;
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 30px;
-border:none;
-border-radius:999px;
-font-weight:700;
-cursor:pointer;
-}
-
-.btn-primary{
-background:var(--purple);
-color:white;
-}
-
-.btn-secondary{
-background:var(--yellow);
-color:#333;
-}
-
-.hero-product{
-flex:1;
-min-width:320px;
-display:flex;
-justify-content:center;
-}
-
-.hero-card{
-background:white;
-padding:35px;
-border-radius:30px;
-box-shadow:0 20px 60px rgba(0,0,0,.1);
-max-width:420px;
-text-align:center;
-transform:rotate(-4deg);
-}
-
-.hero-card h3{
-margin-top:20px;
-font-size:1.4rem;
-}
-
-section{
-padding:100px 8%;
-}
-
-.section-title{
-text-align:center;
-font-size:3rem;
-font-family:'Fredoka',sans-serif;
-margin-bottom:20px;
-color:var(--purple);
-}
-
-.section-sub{
-text-align:center;
-max-width:700px;
-margin:auto;
-line-height:1.8;
-margin-bottom:50px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.product-card{
-background:white;
-border-radius:25px;
-padding:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-10px);
-}
-
-.product-card h3{
-color:var(--purple);
-margin-bottom:10px;
-}
-
-.price{
-font-size:1.4rem;
-font-weight:700;
-margin-top:15px;
-}
-
-.story{
-background:white;
-border-radius:35px;
-padding:50px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-line-height:2;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.feature-box{
-background:white;
-padding:25px;
-border-radius:25px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-.feature-box h3{
-margin-bottom:12px;
-color:var(--purple);
-}
-
-.contact{
-background:linear-gradient(
-135deg,
-var(--purple),
-var(--purple-light)
-);
-color:white;
-border-radius:35px;
-padding:50px;
-text-align:center;
-}
-
-.contact p{
-margin:15px 0;
-}
-
-.contact a{
-color:white;
-}
-
-footer{
-padding:50px;
-text-align:center;
-font-size:.95rem;
-}
-
-@media(max-width:768px){
-
-.hero-content h1{
-font-size:3rem;
-}
-
-.nav-links{
-display:none;
-}
-
-.section-title{
-font-size:2.2rem;
-}
-
-}
-
-</style>
-
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="glow1"></div>
-<div class="glow2"></div>
+<div class="progress-bar"></div>
 
-<nav>
+<nav class="navbar">
 
-<div class="logo">
-ANTREYART STORE
+<div class="logo-area">
+<img src="assets/Store_Logo_Without_BG.png" alt="Antreyart Logo">
+<span>Antreyart Store</span>
 </div>
 
 <div class="nav-links">
 <a href="#products">Products</a>
 <a href="#story">Story</a>
-<a href="#features">Features</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -319,43 +39,28 @@ ANTREYART STORE
 <div class="hero-content">
 
 <h1>
-A little art<br>
-in everything.
+A little art<br>in everything.
 </h1>
 
 <p>
-Thoughtfully designed planners, memo pads, and creative products that bring joy, productivity, creativity, and inspiration into everyday life.
+Thoughtfully designed planners, memo pads and creative products that bring joy, productivity and inspiration to everyday life.
 </p>
 
-<div class="hero-buttons">
-
-<button class="btn btn-primary">
-Shop Planners
-</button>
-
-<button class="btn btn-secondary">
-Explore Collection
-</button>
+<a href="#products" class="btn">
+Shop Collection
+</a>
 
 </div>
 
-</div>
+<div class="hero-images">
 
-<div class="hero-product">
+<img class="floating planner1"
+src="assets/Planner 1 front.jpg"
+alt="Planner Green">
 
-<div class="hero-card">
-
-<h3>✨ Featured Collection</h3>
-
-<p>
-One Day at a Time Planner
-</p>
-
-<p class="price">
-₹479
-</p>
-
-</div>
+<img class="floating planner2"
+src="assets/Planner 2 front.jpg"
+alt="Planner Purple">
 
 </div>
 
@@ -363,83 +68,48 @@ One Day at a Time Planner
 
 <section id="products">
 
-<h2 class="section-title">
-Featured Products
-</h2>
+<h2>Featured Products</h2>
 
-<p class="section-sub">
-Designed to help you plan, create, dream and grow.
-</p>
+<div class="product-grid">
 
-<div class="products">
-
-<div class="product-card">
+<div class="card">
+<img src="assets/Planner 1 fill screen.jpg">
 <h3>One Day at a Time</h3>
-<p>Daily Planner • A5 Hardcover • 100 Pages</p>
-<div class="price">₹479</div>
+<p>Planner • ₹479</p>
 </div>
 
-<div class="product-card">
-<h3>Stop Waiting for Tomorrow</h3>
-<p>Daily Planner • A5 Hardcover • 100 Pages</p>
-<div class="price">₹479</div>
+<div class="card">
+<img src="assets/Planner 2 fill screen.jpg">
+<h3>Stop Waiting For Tomorrow</h3>
+<p>Planner • ₹479</p>
 </div>
 
-<div class="product-card">
-<h3>The "I will do it later" List</h3>
-<p>Memo Pad • 50 Sheets • 100 GSM</p>
-<div class="price">₹199</div>
+<div class="card">
+<img src="assets/Memo Pad 1 Fill Screen.jpg">
+<h3>The "I Will Do It Later" List</h3>
+<p>Memo Pad • ₹199</p>
 </div>
 
-<div class="product-card">
+<div class="card">
+<img src="assets/Memo pad 2 Fill Screen.jpg">
 <h3>Before You Forget Write it Down</h3>
-<p>Memo Pad • 50 Sheets • 100 GSM</p>
-<div class="price">₹199</div>
+<p>Memo Pad • ₹199</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="features">
+<section id="gallery">
 
-<h2 class="section-title">
-Why You'll Love Them
-</h2>
+<h2>Behind The Collection</h2>
 
-<div class="features">
+<div class="gallery-grid">
 
-<div class="feature-box">
-<h3>Daily Planners</h3>
-<p>
-✓ A5 Size<br>
-✓ Hardcover<br>
-✓ Gold Wire-O Binding<br>
-✓ 100 Pages<br>
-✓ 100 GSM Paper
-</p>
-</div>
-
-<div class="feature-box">
-<h3>Inside The Planner</h3>
-<p>
-✓ Tasks<br>
-✓ Top Priorities<br>
-✓ Meal Planning<br>
-✓ Notes & Ideas<br>
-✓ Mood Tracking
-</p>
-</div>
-
-<div class="feature-box">
-<h3>Memo Pads</h3>
-<p>
-✓ 4x6 Inches<br>
-✓ 50 Sheets<br>
-✓ 100 GSM Paper<br>
-✓ Tear-off Design
-</p>
-</div>
+<img src="assets/Both Memo Pads Flat.jpg">
+<img src="assets/Both Memo Pads Overlapping.jpg">
+<img src="assets/Both Planners Flat.jpg">
+<img src="assets/Both Planners overlapping.jpg">
 
 </div>
 
@@ -447,28 +117,18 @@ Why You'll Love Them
 
 <section id="story">
 
-<h2 class="section-title">
-From Sketchbook to Store
-</h2>
+<h2>From Sketchbook To Store</h2>
 
-<div class="story">
+<div class="story-box">
 
 <p>
-
 Hi, I'm Antreya.
 
-I'm an illustrator with a huge obsession for turning everyday things into cute, colorful, and cartoon-filled creations.
+What started as doodles in the corners of notebooks slowly became a world of characters, colors and tiny moments of joy.
 
-What started as doodles in the corners of notebooks slowly became a world of characters, ideas, and tiny moments of joy.
+I created Antreyart Store because art should live beyond sketchbooks. Every planner, memo pad and future creation carries a little creativity, comfort and happiness.
 
-I created Antreyart Store to share those moments with others.
-
-Every design is hand-drawn with care, creativity, and heart. Whether it's a planner, memo pad, greeting card, journal, or future creation, every product is designed to make everyday life a little brighter.
-
-Because art doesn't belong only in galleries.
-
-It belongs on your desk, in your notebook, in your plans, and in your daily routine.
-
+Because there's a little art in everything.
 </p>
 
 </div>
@@ -477,24 +137,24 @@ It belongs on your desk, in your notebook, in your plans, and in your daily rout
 
 <section id="contact">
 
-<div class="contact">
+<div class="contact-box">
 
-<h2>
-Let's Stay Connected
-</h2>
+<h2>Let's Stay Connected</h2>
 
-<p>
-📧 antreyart@gmail.com
-</p>
+<p>📧 antreyart@gmail.com</p>
 
 <p>
 📸 Instagram:
-https://www.instagram.com/antreyart_store/
+<a href="https://www.instagram.com/antreyart_store/" target="_blank">
+@antreyart_store
+</a>
 </p>
 
 <p>
 📘 Facebook:
-https://www.facebook.com/profile.php?id=61595706358059
+<a href="https://www.facebook.com/profile.php?id=61595706358059" target="_blank">
+Antreyart Store
+</a>
 </p>
 
 </div>
@@ -502,5 +162,10 @@ https://www.facebook.com/profile.php?id=61595706358059
 </section>
 
 <footer>
+© 2026 Antreyart Store • A little art in everything 🎨✨
+</footer>
 
-© 2026 Antreyart Store • A little art in everything
+<script src="js/app.js"></script>
+
+</body>
+</html>
