@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Antreyart Store | A little art in everything</title>
+<title>Antreyart Store</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,130 +19,144 @@
 
 <div class="progress-bar"></div>
 
-<nav class="navbar">
+<header class="topbar">
 
-<div class="logo-area">
-<img src="assets/Store_Logo_Without_BG.png" alt="Antreyart Logo">
-<span>Antreyart Store</span>
+<img src="assets/face_without_bg.png" class="face-logo" alt="Antreyart Face">
+
+<div class="search-bar">
+<input type="text" placeholder="Search Products">
 </div>
 
-<div class="nav-links">
-<a href="#products">Products</a>
-<a href="#story">Story</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
 </div>
 
-</nav>
+</header>
+
+<div class="side-menu" id="sideMenu">
+
+<a href="#">Home</a>
+<a href="#">Categories</a>
+<a href="#">Orders</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Account Login</a>
+
+</div>
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-left">
 
-<h1>
-A little art<br>in everything.
+<h1 class="brand-name">
+ANTREYART STORE
 </h1>
 
-<p>
-Thoughtfully designed planners, memo pads and creative products that bring joy, productivity and inspiration to everyday life.
+<p class="tagline">
+A little art in everything
 </p>
 
-<a href="#products" class="btn">
-Shop Collection
-</a>
+<div class="story-preview">
+
+<p>
+From notebook doodles to products that brighten everyday life.
+
+Discover planners, memo pads and creative collections designed with heart.
+</p>
 
 </div>
 
-<div class="hero-images">
+</div>
 
-<img class="floating planner1"
-src="assets/Planner 1 front.jpg"
-alt="Planner Green">
+<div class="hero-right">
 
-<img class="floating planner2"
-src="assets/Planner 2 front.jpg"
-alt="Planner Purple">
+<img src="assets/Intro_wink.png" alt="Antreyart Character">
 
 </div>
 
 </section>
 
-<section id="products">
+<section class="category-buttons">
 
-<h2>Featured Products</h2>
+<button>Best Sellers</button>
+<button>Planners</button>
+<button>Memo Pads</button>
+<button>Habit Trackers</button>
+<button>Calendars</button>
+
+</section>
+
+<section class="products-section">
+
+<h2>
+Featured Products
+</h2>
 
 <div class="product-grid">
 
-<div class="card">
-<img src="assets/Planner 1 fill screen.jpg">
-<h3>One Day at a Time</h3>
-<p>Planner • ₹479</p>
-</div>
+<div class="product-card">
 
-<div class="card">
-<img src="assets/Planner 2 fill screen.jpg">
-<h3>Stop Waiting For Tomorrow</h3>
-<p>Planner • ₹479</p>
-</div>
+<img src="assets/Planner 1 front.jpg">
 
-<div class="card">
-<img src="assets/Memo Pad 1 Fill Screen.jpg">
-<h3>The "I Will Do It Later" List</h3>
-<p>Memo Pad • ₹199</p>
-</div>
+<h3>
+One Day at a Time
+</h3>
 
-<div class="card">
-<img src="assets/Memo pad 2 Fill Screen.jpg">
-<h3>Before You Forget Write it Down</h3>
-<p>Memo Pad • ₹199</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="gallery">
-
-<h2>Behind The Collection</h2>
-
-<div class="gallery-grid">
-
-<img src="assets/Both Memo Pads Flat.jpg">
-<img src="assets/Both Memo Pads Overlapping.jpg">
-<img src="assets/Both Planners Flat.jpg">
-<img src="assets/Both Planners overlapping.jpg">
-
-</div>
-
-</section>
-
-<section id="story">
-
-<h2>From Sketchbook To Store</h2>
-
-<div class="story-box">
-
-<p>
-Hi, I'm Antreya.
-
-What started as doodles in the corners of notebooks slowly became a world of characters, colors and tiny moments of joy.
-
-I created Antreyart Store because art should live beyond sketchbooks. Every planner, memo pad and future creation carries a little creativity, comfort and happiness.
-
-Because there's a little art in everything.
+<p class="price">
+₹479
 </p>
 
 </div>
 
+<div class="product-card">
+
+<img src="assets/Memo Pad 1 Fill Screen.jpg">
+
+<h3>
+Panda Memo Pad
+</h3>
+
+<p class="price">
+₹199
+</p>
+
+</div>
+
+</div>
+
+<div class="see-more-wrapper">
+<button class="see-more">
+See More
+</button>
+</div>
+
 </section>
 
-<section id="contact">
+<section class="story-section">
 
-<div class="contact-box">
+<h2>Our Story</h2>
+
+<p>
+
+Hi, I'm Antreya.
+
+What started as doodles in the corners of notebooks slowly became a world of characters, colors and everyday joy.
+
+Every planner, memo pad and illustration is carefully created to bring creativity, comfort and inspiration into daily life.
+
+Because there's a little art in everything.
+
+</p>
+
+</section>
+
+<section class="contact-section">
 
 <h2>Let's Stay Connected</h2>
 
-<p>📧 antreyart@gmail.com</p>
+<p>
+📧 antreyart@gmail.com
+</p>
 
 <p>
 📸 Instagram:
@@ -157,12 +172,10 @@ Antreyart Store
 </a>
 </p>
 
-</div>
-
 </section>
 
 <footer>
-© 2026 Antreyart Store • A little art in everything 🎨✨
+© Antreyart Store • A little art in everything 🎨
 </footer>
 
 <script src="js/app.js"></script>
