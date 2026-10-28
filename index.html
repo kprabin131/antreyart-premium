@@ -1,241 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antreyart Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Antreyart Store | A little art in everything</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+--purple:#7A58C1;
+--purple-light:#A785E8;
+--yellow:#FFD84D;
+--cream:#FFF9EE;
+--peach:#FFD5A9;
+--text:#353535;
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#0a0a0a;
-    color:white;
-    overflow-x:hidden;
+font-family:'Quicksand',sans-serif;
+background:var(--cream);
+color:var(--text);
+overflow-x:hidden;
 }
 
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    radial-gradient(circle at top left,#ba9d67 0%,transparent 25%),
-    radial-gradient(circle at bottom right,#e7c8cc 0%,transparent 25%),
-    #0a0a0a;
+.glow1{
+position:fixed;
+width:500px;
+height:500px;
+background:#b08efb;
+opacity:.15;
+filter:blur(120px);
+top:-100px;
+left:-120px;
+z-index:-1;
 }
 
-.glass-nav{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    max-width:1200px;
+.glow2{
+position:fixed;
+width:500px;
+height:500px;
+background:#ffd84d;
+opacity:.15;
+filter:blur(140px);
+bottom:-120px;
+right:-120px;
+z-index:-1;
+}
 
-    backdrop-filter:blur(20px);
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.12);
-
-    border-radius:25px;
-    padding:18px 30px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    z-index:1000;
+nav{
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+max-width:1250px;
+padding:18px 25px;
+background:rgba(255,255,255,.6);
+backdrop-filter:blur(20px);
+border-radius:30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
 .logo{
-    font-size:1.3rem;
-    font-weight:600;
-    letter-spacing:2px;
+font-family:'Fredoka',sans-serif;
+font-size:1.4rem;
+font-weight:600;
+color:var(--purple);
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
+display:flex;
+gap:25px;
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
+text-decoration:none;
+color:#444;
+font-weight:600;
 }
 
-.hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:7rem;
-    font-weight:700;
-    line-height:1;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8%;
+gap:60px;
+flex-wrap:wrap;
 }
 
-.hero p{
-    max-width:700px;
-    margin-top:25px;
-    color:#cfcfcf;
-    font-size:1.2rem;
+.hero-content{
+flex:1;
+min-width:320px;
 }
 
-.cta{
-    margin-top:40px;
+.hero-content h1{
+font-family:'Fredoka',sans-serif;
+font-size:4.7rem;
+line-height:1;
+color:var(--purple);
+margin-bottom:25px;
 }
 
-.cta button{
-    padding:15px 35px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(
-    135deg,
-    #c4a46b,
-    #e7c8cc
-    );
-    font-size:1rem;
-    cursor:pointer;
+.hero-content p{
+font-size:1.15rem;
+line-height:1.8;
+max-width:600px;
 }
 
-.scroll-indicator{
-    position:absolute;
-    bottom:40px;
-    font-size:.9rem;
-    opacity:.6;
-    animation:float 2s infinite ease-in-out;
+.hero-buttons{
+margin-top:35px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(10px);}
-    100%{transform:translateY(0);}
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:999px;
+font-weight:700;
+cursor:pointer;
 }
 
-.section{
-    padding:120px 10%;
+.btn-primary{
+background:var(--purple);
+color:white;
 }
 
-.section h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:4rem;
-    margin-bottom:20px;
+.btn-secondary{
+background:var(--yellow);
+color:#333;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-    margin-top:50px;
+.hero-product{
+flex:1;
+min-width:320px;
+display:flex;
+justify-content:center;
 }
 
-.card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:25px;
-    padding:40px;
-    transition:.4s;
+.hero-card{
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+max-width:420px;
+text-align:center;
+transform:rotate(-4deg);
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.hero-card h3{
+margin-top:20px;
+font-size:1.4rem;
+}
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+font-family:'Fredoka',sans-serif;
+margin-bottom:20px;
+color:var(--purple);
+}
+
+.section-sub{
+text-align:center;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+margin-bottom:50px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.product-card{
+background:white;
+border-radius:25px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-card h3{
+color:var(--purple);
+margin-bottom:10px;
+}
+
+.price{
+font-size:1.4rem;
+font-weight:700;
+margin-top:15px;
+}
+
+.story{
+background:white;
+border-radius:35px;
+padding:50px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+line-height:2;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.feature-box{
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.feature-box h3{
+margin-bottom:12px;
+color:var(--purple);
+}
+
+.contact{
+background:linear-gradient(
+135deg,
+var(--purple),
+var(--purple-light)
+);
+color:white;
+border-radius:35px;
+padding:50px;
+text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+}
+
+.contact a{
+color:white;
 }
 
 footer{
-    text-align:center;
-    padding:60px 20px;
-    border-top:1px solid rgba(255,255,255,.1);
+padding:50px;
+text-align:center;
+font-size:.95rem;
 }
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:4rem;
+.hero-content h1{
+font-size:3rem;
 }
 
 .nav-links{
 display:none;
 }
 
+.section-title{
+font-size:2.2rem;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<nav class="glass-nav">
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<nav>
 
 <div class="logo">
-ANTREYART
+ANTREYART STORE
 </div>
 
 <div class="nav-links">
-<a href="#">Collections</a>
-<a href="#">Journal</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a href="#products">Products</a>
+<a href="#story">Story</a>
+<a href="#features">Features</a>
+<a href="#contact">Contact</a>
 </div>
 
 </nav>
 
 <section class="hero">
 
+<div class="hero-content">
+
 <h1>
-Crafted<br>
-for Ideas
+A little art<br>
+in everything.
 </h1>
 
 <p>
-Luxury stationery, journals and creative essentials
-designed for thinkers, artists and dreamers.
+Thoughtfully designed planners, memo pads, and creative products that bring joy, productivity, creativity, and inspiration into everyday life.
 </p>
 
-<div class="cta">
-<button>Explore Collection</button>
+<div class="hero-buttons">
+
+<button class="btn btn-primary">
+Shop Planners
+</button>
+
+<button class="btn btn-secondary">
+Explore Collection
+</button>
+
 </div>
 
-<div class="scroll-indicator">
-↓ Scroll
+</div>
+
+<div class="hero-product">
+
+<div class="hero-card">
+
+<h3>✨ Featured Collection</h3>
+
+<p>
+One Day at a Time Planner
+</p>
+
+<p class="price">
+₹479
+</p>
+
+</div>
+
 </div>
 
 </section>
 
-<section class="section">
+<section id="products">
 
-<h2>Featured Collections</h2>
+<h2 class="section-title">
+Featured Products
+</h2>
 
-<div class="cards">
+<p class="section-sub">
+Designed to help you plan, create, dream and grow.
+</p>
 
-<div class="card">
-<h3>Premium Journals</h3>
+<div class="products">
+
+<div class="product-card">
+<h3>One Day at a Time</h3>
+<p>Daily Planner • A5 Hardcover • 100 Pages</p>
+<div class="price">₹479</div>
+</div>
+
+<div class="product-card">
+<h3>Stop Waiting for Tomorrow</h3>
+<p>Daily Planner • A5 Hardcover • 100 Pages</p>
+<div class="price">₹479</div>
+</div>
+
+<div class="product-card">
+<h3>The "I will do it later" List</h3>
+<p>Memo Pad • 50 Sheets • 100 GSM</p>
+<div class="price">₹199</div>
+</div>
+
+<div class="product-card">
+<h3>Before You Forget Write it Down</h3>
+<p>Memo Pad • 50 Sheets • 100 GSM</p>
+<div class="price">₹199</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="section-title">
+Why You'll Love Them
+</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Daily Planners</h3>
 <p>
-Elegant journals with premium paper and
-timeless craftsmanship.
+✓ A5 Size<br>
+✓ Hardcover<br>
+✓ Gold Wire-O Binding<br>
+✓ 100 Pages<br>
+✓ 100 GSM Paper
 </p>
 </div>
 
-<div class="card">
-<h3>Creative Notebooks</h3>
+<div class="feature-box">
+<h3>Inside The Planner</h3>
 <p>
-Designed for sketches, planning and inspiration.
+✓ Tasks<br>
+✓ Top Priorities<br>
+✓ Meal Planning<br>
+✓ Notes & Ideas<br>
+✓ Mood Tracking
 </p>
 </div>
 
-<div class="card">
-<h3>Gift Collections</h3>
+<div class="feature-box">
+<h3>Memo Pads</h3>
 <p>
-Curated stationery experiences for every occasion.
+✓ 4x6 Inches<br>
+✓ 50 Sheets<br>
+✓ 100 GSM Paper<br>
+✓ Tear-off Design
 </p>
 </div>
+
+</div>
+
+</section>
+
+<section id="story">
+
+<h2 class="section-title">
+From Sketchbook to Store
+</h2>
+
+<div class="story">
+
+<p>
+
+Hi, I'm Antreya.
+
+I'm an illustrator with a huge obsession for turning everyday things into cute, colorful, and cartoon-filled creations.
+
+What started as doodles in the corners of notebooks slowly became a world of characters, ideas, and tiny moments of joy.
+
+I created Antreyart Store to share those moments with others.
+
+Every design is hand-drawn with care, creativity, and heart. Whether it's a planner, memo pad, greeting card, journal, or future creation, every product is designed to make everyday life a little brighter.
+
+Because art doesn't belong only in galleries.
+
+It belongs on your desk, in your notebook, in your plans, and in your daily routine.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="contact">
+
+<h2>
+Let's Stay Connected
+</h2>
+
+<p>
+📧 antreyart@gmail.com
+</p>
+
+<p>
+📸 Instagram:
+https://www.instagram.com/antreyart_store/
+</p>
+
+<p>
+📘 Facebook:
+https://www.facebook.com/profile.php?id=61595706358059
+</p>
 
 </div>
 
@@ -243,9 +503,4 @@ Curated stationery experiences for every occasion.
 
 <footer>
 
-© 2026 Antreyart Premium
-
-</footer>
-
-</body>
-</html>
+© 2026 Antreyart Store • A little art in everything
