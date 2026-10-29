@@ -1,117 +1,314 @@
-// =========================
-// SCROLL PROGRESS BAR
-// =========================
-
-const progressBar = document.querySelector(".progress-bar");
-
-window.addEventListener("scroll", () => {
-
-    const scrollTop =
-        document.documentElement.scrollTop;
-
-    const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    const percent =
-        (scrollTop / scrollHeight) * 100;
-
-    if (progressBar) {
-        progressBar.style.width = percent + "%";
-    }
-
-});
-
-
-// =========================
-// HAMBURGER MENU
-// =========================
-
-const sideMenu =
-    document.getElementById("sideMenu");
-
-let menuOpen = false;
+/* ==========================
+   MENU TOGGLE
+========================== */
 
 function toggleMenu() {
 
-    if (!sideMenu) return;
+  const menu =
+  document.getElementById("menuPanel");
 
-    if (menuOpen) {
+  if(menu.style.right === "20px"){
 
-        sideMenu.style.right = "-350px";
-        menuOpen = false;
+    menu.style.right = "-350px";
 
-    } else {
+  }else{
 
-        sideMenu.style.right = "20px";
-        menuOpen = true;
+    menu.style.right = "20px";
 
-    }
+  }
 
 }
 
+/* ==========================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================== */
 
-// =========================
-// CLOSE MENU WHEN CLICKING
-// OUTSIDE THE MENU
-// =========================
+document.addEventListener("click",(e)=>{
 
-document.addEventListener("click", (event) => {
+  const menu =
+  document.getElementById("menuPanel");
 
-    const menuButton =
-        document.querySelector(".menu-btn");
+  const menuButton =
+  document.querySelector(".menu-button");
 
-    if (!sideMenu || !menuButton) return;
+  if(
+    !menu.contains(e.target) &&
+    !menuButton.contains(e.target)
+  ){
 
-    const clickedInsideMenu =
-        sideMenu.contains(event.target);
+    menu.style.right = "-350px";
 
-    const clickedMenuButton =
-        menuButton.contains(event.target);
-
-    if (
-        menuOpen &&
-        !clickedInsideMenu &&
-        !clickedMenuButton
-    ) {
-
-        sideMenu.style.right = "-350px";
-        menuOpen = false;
-
-    }
+  }
 
 });
 
+/* ==========================
+   ESC KEY CLOSE MENU
+========================== */
 
-// =========================
-// ESC KEY CLOSES MENU
-// =========================
+document.addEventListener("keydown",(e)=>{
 
-document.addEventListener("keydown", (event) => {
+  if(e.key === "Escape"){
 
-    if (
-        event.key === "Escape" &&
-        menuOpen
-    ) {
+    document.getElementById(
+      "menuPanel"
+    ).style.right = "-350px";
 
-        sideMenu.style.right = "-350px";
-        menuOpen = false;
-
-    }
+  }
 
 });
 
+/* ==========================
+   SCROLL PROGRESS BAR
+========================== */
 
-// =========================
-// MENU ANIMATION ON LOAD
-// =========================
+const progressBar =
+document.querySelector(
+  ".progress-bar"
+);
 
-window.addEventListener("load", () => {
+window.addEventListener(
+"scroll",
+()=>{
 
-    if (sideMenu) {
+const scrollTop =
+document.documentElement.scrollTop;
 
-        sideMenu.style.right = "-350px";
+const scrollHeight =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
 
-    }
+const percent =
+(scrollTop / scrollHeight) * 100;
+
+progressBar.style.width =
+percent + "%";
+
+});
+
+/* ==========================
+   CURSOR GLOW
+========================== */
+
+const cursorGlow =
+document.querySelector(
+".cursor-glow"
+);
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+cursorGlow.style.left =
+e.clientX + "px";
+
+cursorGlow.style.top =
+e.clientY + "px";
+
+}
+);
+
+/* ==========================
+   SEARCH PLACEHOLDER ROTATION
+========================== */
+
+const searchBox =
+document.querySelector(
+".search-box"
+);
+
+const placeholders = [
+
+"Search planners...",
+
+"Search memo pads...",
+
+"Search calendars...",
+
+"Search habit trackers...",
+
+"Search gifts..."
+
+];
+
+let currentIndex = 0;
+
+setInterval(()=>{
+
+if(searchBox){
+
+currentIndex++;
+
+if(currentIndex >= placeholders.length){
+
+currentIndex = 0;
+
+}
+
+searchBox.setAttribute(
+"placeholder",
+placeholders[currentIndex]
+);
+
+}
+
+},2500);
+
+/* ==========================
+   SCROLL REVEALS
+========================== */
+
+const revealElements =
+document.querySelectorAll(
+".featured-section, .story-section, .gallery-section, .planner-highlight, .social-section"
+);
+
+function revealOnScroll(){
+
+revealElements.forEach(
+(section)=>{
+
+const top =
+section.getBoundingClientRect().top;
+
+if(top <
+window.innerHeight - 120){
+
+section.classList.add(
+"show-section"
+);
+
+}
+
+}
+);
+
+}
+
+window.addEventListener(
+"scroll",
+revealOnScroll
+);
+
+revealOnScroll();
+
+/* ==========================
+   CATEGORY BUTTON ACTIVE STATE
+========================== */
+
+const buttons =
+document.querySelectorAll(
+".filter-btn"
+);
+
+buttons.forEach((button)=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+buttons.forEach(btn=>{
+
+btn.classList.remove(
+"active"
+);
+
+});
+
+button.classList.add(
+"active"
+);
+
+}
+);
+
+});
+
+/* ==========================
+   PRODUCT CARD TILT EFFECT
+========================== */
+
+const cards =
+document.querySelectorAll(
+".product-card"
+);
+
+cards.forEach((card)=>{
+
+card.addEventListener(
+"mousemove",
+(e)=>{
+
+const rect =
+card.getBoundingClientRect();
+
+const x =
+e.clientX - rect.left;
+
+const y =
+e.clientY - rect.top;
+
+const rotateX =
+((y / rect.height)-0.5) * -10;
+
+const rotateY =
+((x / rect.width)-0.5) * 10;
+
+card.style.transform =
+
+`perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-10px)`;
+
+});
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+card.style.transform =
+"perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+});
+
+});
+
+/* ==========================
+   HERO PARALLAX
+========================== */
+
+const heroArt =
+document.querySelector(
+".hero-art img"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(heroArt){
+
+const value =
+window.scrollY * 0.15;
+
+heroArt.style.transform =
+`translateY(${value}px)`;
+
+}
+
+});
+
+/* ==========================
+   LOADING ANIMATION
+========================== */
+
+window.addEventListener(
+"load",
+()=>{
+
+document.body.classList.add(
+"loaded"
+);
 
 });
