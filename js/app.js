@@ -1,8 +1,16 @@
-const progressBar = document.querySelector('.progress-bar');
-const menu = document.getElementById('sideMenu');
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
 
-window.addEventListener('scroll', () => {
+  if (menu.style.right === "20px") {
+    menu.style.right = "-350px";
+  } else {
+    menu.style.right = "20px";
+  }
+}
 
+const progressBar = document.querySelector(".progress-bar");
+
+window.addEventListener("scroll", () => {
   const scrollTop = document.documentElement.scrollTop;
 
   const scrollHeight =
@@ -11,26 +19,7 @@ window.addEventListener('scroll', () => {
 
   const percent = (scrollTop / scrollHeight) * 100;
 
-  progressBar.style.width = percent + '%';
-
-});
-
-function toggleMenu() {
-
-  menu.classList.toggle('show-menu');
-
-}
-
-document.addEventListener('click', function (event) {
-
-  const isMenuButton =
-    event.target.closest('.menu-btn');
-
-  const isMenu =
-    event.target.closest('#sideMenu');
-
-  if (!isMenuButton && !isMenu) {
-    menu.classList.remove('show-menu');
+  if (progressBar) {
+    progressBar.style.width = percent + "%";
   }
-
 });
