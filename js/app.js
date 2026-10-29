@@ -17,17 +17,15 @@ progressBar.style.width = percent + '%';
 
 function toggleMenu() {
 
-const menu =
-document.getElementById('sideMenu');
+const menu = document.getElementById('sideMenu');
 
-if(menu.style.right === '0px'){
-
-menu.style.right = '-300px';
-
-}else{
-
-menu.style.right = '0px';
-
+if(
+menu.style.right === '20px'
+){
+menu.style.right = '-350px';
+}
+else{
+menu.style.right = '20px';
 }
 
 }
