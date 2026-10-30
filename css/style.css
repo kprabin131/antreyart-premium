@@ -1,7 +1,7 @@
 :root{
 --yellow:#ffc700;
 --purple:#7a58c1;
---cream:#f6f0e7;
+--cream:#f8f3eb;
 --text:#2d2d2d;
 --white:#ffffff;
 }
@@ -23,9 +23,9 @@ color:var(--text);
 overflow-x:hidden;
 }
 
-/* ==============================
-   PROGRESS BAR
-============================== */
+/* ====================
+PROGRESS BAR
+==================== */
 
 .progress-bar{
 position:fixed;
@@ -37,56 +37,59 @@ background:var(--purple);
 z-index:99999;
 }
 
-/* ==============================
-   CURSOR GLOW
-============================== */
+/* ====================
+CURSOR GLOW
+==================== */
 
 .cursor-glow{
 position:fixed;
-width:22px;
-height:22px;
+width:20px;
+height:20px;
 border-radius:50%;
 background:var(--purple);
-opacity:.25;
+opacity:.20;
 pointer-events:none;
-z-index:99999;
-filter:blur(10px);
+filter:blur(8px);
 transform:translate(-50%,-50%);
+z-index:99999;
 }
 
-/* ==============================
-   HEADER
-============================== */
+/* ====================
+HEADER
+==================== */
 
 .header{
+
 position:sticky;
 top:0;
-z-index:1000;
 
 display:flex;
 align-items:center;
 justify-content:space-between;
 
-padding:10px 4%;
+padding:10px 30px;
 
 background:rgba(255,255,255,.75);
+
 backdrop-filter:blur(20px);
 
 border-bottom:1px solid rgba(0,0,0,.05);
+
+z-index:999;
 }
 
-.logo-section img{
+.face-logo{
 height:90px;
 transition:.4s;
 }
 
-.logo-section img:hover{
-transform:rotate(-5deg) scale(1.05);
+.face-logo:hover{
+transform:rotate(-5deg);
 }
 
-/* ==============================
-   SEARCH
-============================== */
+/* ====================
+SEARCH
+==================== */
 
 .search-wrapper{
 flex:1;
@@ -94,17 +97,21 @@ margin:0 30px;
 }
 
 .search-box{
+
 width:100%;
 
-padding:16px 25px;
+padding:16px 22px;
 
-border-radius:50px;
+border-radius:999px;
 
-border:2px solid rgba(0,0,0,.08);
+border:none;
 
 background:white;
 
 font-size:1rem;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.08);
 
 outline:none;
 
@@ -112,117 +119,133 @@ transition:.3s;
 }
 
 .search-box:focus{
-border-color:var(--purple);
-box-shadow:0 0 0 4px rgba(122,88,193,.15);
+
+box-shadow:
+0 10px 30px rgba(122,88,193,.2);
+
 }
 
-/* ==============================
-   MENU BUTTON
-============================== */
+/* ====================
+MENU
+==================== */
 
 .menu-button{
-font-size:2.5rem;
+
+font-size:2.2rem;
+
 cursor:pointer;
+
 transition:.3s;
 }
 
 .menu-button:hover{
-transform:scale(1.1);
+
 color:var(--purple);
+
+transform:scale(1.05);
+
 }
 
-/* ==============================
-   MENU PANEL
-============================== */
-
 .menu-panel{
+
 position:fixed;
 
-top:90px;
 right:-350px;
+top:95px;
 
-width:320px;
+width:300px;
 
-background:rgba(255,255,255,.95);
+background:rgba(255,255,255,.92);
 
-backdrop-filter:blur(30px);
+backdrop-filter:blur(20px);
 
 border-radius:25px 0 0 25px;
 
-padding:30px;
-
-box-shadow:
-0 15px 50px rgba(0,0,0,.15);
+padding:20px;
 
 transition:.4s ease;
 
-z-index:9998;
+box-shadow:
+0 20px 50px rgba(0,0,0,.15);
+
+z-index:9999;
 }
 
 .menu-panel a{
+
 display:block;
 
-padding:15px 0;
+padding:18px;
 
 text-decoration:none;
 
-font-weight:600;
+font-size:1.1rem;
 
-font-size:1.15rem;
+font-weight:600;
 
 color:#333;
 
-border-bottom:1px solid rgba(0,0,0,.05);
-
 transition:.3s;
+
+border-radius:12px;
 }
 
 .menu-panel a:hover{
-padding-left:10px;
+
+background:#f4ebff;
+
 color:var(--purple);
+
+padding-left:25px;
 }
 
-/* ==============================
-   HERO
-============================== */
+/* ====================
+HERO
+==================== */
 
 .hero{
-min-height:85vh;
 
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
 
-padding:40px 7%;
+padding:70px 8%;
 
-gap:60px;
+gap:80px;
+
+min-height:80vh;
 }
 
 .hero-content{
 flex:1;
 }
 
-.hero-content img{
+.brand-logo{
+
 width:180px;
-margin-bottom:15px;
+
+margin-bottom:20px;
 }
 
-.hero-content h1{
+.hero h1{
+
 font-family:'Fredoka',sans-serif;
 
 font-size:6rem;
 
+line-height:1;
+
 color:var(--yellow);
 
-line-height:.9;
+text-shadow:
+4px 4px 0 rgba(0,0,0,.08);
 }
 
 .tagline{
+
 margin-top:15px;
 
-font-size:1.8rem;
+font-size:1.7rem;
 
 font-weight:700;
 
@@ -230,13 +253,14 @@ color:var(--purple);
 }
 
 .intro-text{
-margin-top:30px;
 
-max-width:550px;
+margin-top:25px;
+
+font-size:1.1rem;
 
 line-height:2;
 
-font-size:1.1rem;
+max-width:550px;
 }
 
 .hero-art{
@@ -246,31 +270,33 @@ justify-content:center;
 }
 
 .hero-art img{
-width:600px;
+
+width:550px;
+
 max-width:100%;
 
-animation:floatHero 5s ease-in-out infinite;
+animation:floatHero 6s ease-in-out infinite;
 }
 
 @keyframes floatHero{
 
 0%{
-transform:translateY(0px);
+transform:translateY(0);
 }
 
 50%{
-transform:translateY(-25px);
+transform:translateY(-20px);
 }
 
 100%{
-transform:translateY(0px);
+transform:translateY(0);
 }
 
 }
 
-/* ==============================
-   CATEGORY BUTTONS
-============================== */
+/* ====================
+CATEGORY BUTTONS
+==================== */
 
 .categories{
 
@@ -278,28 +304,26 @@ display:flex;
 
 justify-content:center;
 
-align-items:center;
-
 gap:15px;
 
 flex-wrap:wrap;
 
-padding:10px 20px 60px;
+padding-bottom:70px;
 }
 
 .filter-btn{
+
+padding:14px 28px;
+
+border-radius:999px;
 
 border:3px solid var(--purple);
 
 background:white;
 
-color:var(--yellow);
-
 font-weight:700;
 
-padding:15px 30px;
-
-border-radius:999px;
+color:var(--yellow);
 
 cursor:pointer;
 
@@ -308,11 +332,11 @@ transition:.3s;
 
 .filter-btn:hover{
 
+transform:translateY(-4px);
+
 background:var(--purple);
 
 color:white;
-
-transform:translateY(-3px);
 }
 
 .filter-btn.active{
@@ -322,13 +346,15 @@ background:var(--purple);
 color:white;
 }
 
-/* ==============================
-   SECTION TITLES
-============================== */
+/* ====================
+SECTION HEADING
+==================== */
 
 .section-heading{
+
 text-align:center;
-margin-bottom:60px;
+
+margin-bottom:50px;
 }
 
 .section-heading h2{
@@ -341,15 +367,19 @@ color:var(--purple);
 }
 
 .section-heading p{
+
 margin-top:12px;
+
+font-size:1.1rem;
 }
 
-/* ==============================
-   FEATURED PRODUCTS
-============================== */
+/* ====================
+PRODUCTS
+==================== */
 
 .featured-section{
-padding:80px 7%;
+
+padding:80px 8%;
 }
 
 .product-grid{
@@ -357,7 +387,7 @@ padding:80px 7%;
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+repeat(auto-fit,minmax(270px,1fr));
 
 gap:30px;
 }
@@ -368,7 +398,7 @@ background:white;
 
 padding:20px;
 
-border-radius:25px;
+border-radius:30px;
 
 box-shadow:
 0 10px 30px rgba(0,0,0,.08);
@@ -379,19 +409,18 @@ transition:.4s;
 .product-card:hover{
 
 transform:
-translateY(-12px)
+translateY(-15px)
 scale(1.02);
 
 box-shadow:
-0 30px 70px rgba(122,88,193,.2);
-
+0 25px 60px rgba(122,88,193,.22);
 }
 
 .product-card img{
 
 width:100%;
 
-height:350px;
+height:320px;
 
 object-fit:contain;
 
@@ -399,6 +428,7 @@ transition:.5s;
 }
 
 .product-card:hover img{
+
 transform:scale(1.08);
 }
 
@@ -406,7 +436,7 @@ transform:scale(1.08);
 
 margin-top:20px;
 
-font-size:1.3rem;
+font-size:1.25rem;
 }
 
 .price{
@@ -415,39 +445,35 @@ display:block;
 
 margin-top:10px;
 
-font-size:1.4rem;
+font-size:1.5rem;
 
 font-weight:700;
 
 color:var(--purple);
 }
 
-/* ==============================
-   STORY
-============================== */
+/* ====================
+STORY
+==================== */
 
 .story-section{
 
-padding:90px 7%;
-
 display:grid;
 
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 
-gap:60px;
+gap:80px;
 
 align-items:center;
+
+padding:100px 8%;
 }
 
 .story-left img{
 
 width:100%;
 
-border-radius:25px;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.12);
+border-radius:30px;
 }
 
 .story-right h2{
@@ -456,31 +482,32 @@ font-family:'Fredoka',sans-serif;
 
 font-size:3.5rem;
 
-color:var(--purple);
-
 margin-bottom:20px;
+
+color:var(--purple);
 }
 
 .story-right p{
+
 line-height:2;
 }
 
-/* ==============================
-   GALLERY
-============================== */
+/* ====================
+GALLERY
+==================== */
 
 .gallery-section{
 
-padding:90px 7%;
+padding:100px 8%;
 }
 
 .gallery-section h2{
 
 text-align:center;
 
-font-family:'Fredoka',sans-serif;
-
 font-size:4rem;
+
+font-family:'Fredoka',sans-serif;
 
 color:var(--purple);
 
@@ -490,6 +517,7 @@ margin-bottom:50px;
 .gallery-grid{
 
 columns:3;
+
 column-gap:20px;
 }
 
@@ -499,7 +527,7 @@ width:100%;
 
 margin-bottom:20px;
 
-border-radius:20px;
+border-radius:25px;
 
 transition:.4s;
 }
@@ -507,25 +535,21 @@ transition:.4s;
 .gallery-grid img:hover{
 
 transform:scale(1.03);
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.15);
 }
 
-/* ==============================
-   PLANNER SECTION
-============================== */
+/* ====================
+PLANNER
+==================== */
 
 .planner-highlight{
 
-padding:90px 7%;
-
 display:grid;
 
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 
-gap:50px;
+gap:60px;
+
+padding:100px 8%;
 
 align-items:center;
 }
@@ -557,20 +581,20 @@ gap:20px;
 
 .planner-images img{
 
-width:48%;
+width:50%;
 
 border-radius:20px;
 }
 
-/* ==============================
-   SOCIAL
-============================== */
+/* ====================
+SOCIAL
+==================== */
 
 .social-section{
 
-text-align:center;
+padding:100px 20px;
 
-padding:80px 20px;
+text-align:center;
 }
 
 .social-section h2{
@@ -590,62 +614,72 @@ margin-top:20px;
 
 font-size:1.4rem;
 
-color:var(--purple);
-
 font-weight:700;
+
+color:var(--purple);
 
 text-decoration:none;
 }
 
-/* ==============================
-   FOOTER
-============================== */
+/* ====================
+FOOTER
+==================== */
 
 footer{
 
-margin-top:60px;
-
-text-align:center;
+background:white;
 
 padding:50px 20px;
 
-background:white;
+text-align:center;
+
+margin-top:50px;
 }
 
 .footer-logo img{
+
 height:80px;
+
 margin-bottom:15px;
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
+/* ====================
+RESPONSIVE
+==================== */
 
 @media(max-width:950px){
 
 .hero{
+
 flex-direction:column;
+
 text-align:center;
 }
 
-.hero-content h1{
-font-size:4rem;
+.hero h1{
+
+font-size:3.7rem;
 }
 
 .story-section,
 .planner-highlight{
+
 grid-template-columns:1fr;
 }
 
 .gallery-grid{
+
 columns:1;
 }
 
 .search-wrapper{
+
 display:none;
 }
 
 .hero-art img{
+
 width:350px;
 }
+
 }
