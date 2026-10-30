@@ -1,9 +1,23 @@
 :root{
---yellow:#ffc700;
---purple:#7a58c1;
---cream:#f8f3eb;
---text:#2d2d2d;
+
+--cream:#f5f1eb;
+
+--warm-white:#fbf8f4;
+
+--soft-sage:#b7c2b2;
+
+--dusty-peach:#d7a79a;
+
+--muted-purple:#76618f;
+
+--lavender:#9c88bd;
+
+--charcoal:#282623;
+
 --white:#ffffff;
+
+--text:#36322f;
+
 }
 
 *{
