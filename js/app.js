@@ -1,314 +1,348 @@
-/* ==========================
-   MENU TOGGLE
-========================== */
+/* =================================
+   MENU
+================================= */
 
 function toggleMenu() {
 
-  const menu =
-  document.getElementById("menuPanel");
+  const menu = document.getElementById("menuPanel");
 
-  if(menu.style.right === "20px"){
-
+  if (menu.style.right === "20px") {
     menu.style.right = "-350px";
-
-  }else{
-
+  } else {
     menu.style.right = "20px";
-
   }
 
 }
 
-/* ==========================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-========================== */
+/* =================================
+   CLOSE MENU CLICK OUTSIDE
+================================= */
 
-document.addEventListener("click",(e)=>{
+document.addEventListener("click", (e) => {
 
-  const menu =
-  document.getElementById("menuPanel");
+  const menu = document.getElementById("menuPanel");
+  const menuButton = document.querySelector(".menu-button");
 
-  const menuButton =
-  document.querySelector(".menu-button");
-
-  if(
+  if (
+    menu &&
     !menu.contains(e.target) &&
     !menuButton.contains(e.target)
-  ){
+  ) {
+    menu.style.right = "-350px";
+  }
+
+});
+
+/* =================================
+   ESC CLOSE MENU
+================================= */
+
+document.addEventListener("keydown", (e) => {
+
+  if (e.key === "Escape") {
+
+    const menu =
+      document.getElementById("menuPanel");
 
     menu.style.right = "-350px";
-
   }
 
 });
 
-/* ==========================
-   ESC KEY CLOSE MENU
-========================== */
-
-document.addEventListener("keydown",(e)=>{
-
-  if(e.key === "Escape"){
-
-    document.getElementById(
-      "menuPanel"
-    ).style.right = "-350px";
-
-  }
-
-});
-
-/* ==========================
+/* =================================
    SCROLL PROGRESS BAR
-========================== */
+================================= */
 
 const progressBar =
-document.querySelector(
-  ".progress-bar"
-);
+  document.querySelector(".progress-bar");
 
-window.addEventListener(
-"scroll",
-()=>{
+window.addEventListener("scroll", () => {
 
-const scrollTop =
-document.documentElement.scrollTop;
+  const scrollTop =
+    document.documentElement.scrollTop;
 
-const scrollHeight =
-document.documentElement.scrollHeight -
-document.documentElement.clientHeight;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
 
-const percent =
-(scrollTop / scrollHeight) * 100;
+  const percent =
+    (scrollTop / scrollHeight) * 100;
 
-progressBar.style.width =
-percent + "%";
+  if (progressBar) {
+    progressBar.style.width = percent + "%";
+  }
 
 });
 
-/* ==========================
+/* =================================
    CURSOR GLOW
-========================== */
+================================= */
 
 const cursorGlow =
-document.querySelector(
-".cursor-glow"
-);
+  document.querySelector(".cursor-glow");
 
-document.addEventListener(
-"mousemove",
-(e)=>{
+document.addEventListener("mousemove", (e) => {
 
-cursorGlow.style.left =
-e.clientX + "px";
+  if (!cursorGlow) return;
 
-cursorGlow.style.top =
-e.clientY + "px";
+  cursorGlow.style.left =
+    e.clientX + "px";
 
-}
-);
+  cursorGlow.style.top =
+    e.clientY + "px";
 
-/* ==========================
+});
+
+/* =================================
    SEARCH PLACEHOLDER ROTATION
-========================== */
+================================= */
 
 const searchBox =
-document.querySelector(
-".search-box"
-);
+  document.querySelector(".search-box");
 
 const placeholders = [
 
-"Search planners...",
+  "Search planners...",
 
-"Search memo pads...",
+  "Search memo pads...",
 
-"Search calendars...",
+  "Search calendars...",
 
-"Search habit trackers...",
+  "Search habit trackers...",
 
-"Search gifts..."
+  "Search gift ideas...",
+
+  "Search cute stationery..."
 
 ];
 
-let currentIndex = 0;
+let currentPlaceholder = 0;
 
-setInterval(()=>{
+setInterval(() => {
 
-if(searchBox){
+  if (!searchBox) return;
 
-currentIndex++;
+  currentPlaceholder++;
 
-if(currentIndex >= placeholders.length){
+  if (
+    currentPlaceholder >=
+    placeholders.length
+  ) {
+    currentPlaceholder = 0;
+  }
 
-currentIndex = 0;
+  searchBox.placeholder =
+    placeholders[currentPlaceholder];
 
-}
+}, 2500);
 
-searchBox.setAttribute(
-"placeholder",
-placeholders[currentIndex]
+/* =================================
+   REVEAL ON SCROLL
+================================= */
+
+const sections = document.querySelectorAll(
+  ".featured-section, .story-section, .gallery-section, .planner-highlight, .social-section"
 );
 
-}
+function revealSections() {
 
-},2500);
+  sections.forEach((section) => {
 
-/* ==========================
-   SCROLL REVEALS
-========================== */
+    const sectionTop =
+      section.getBoundingClientRect().top;
 
-const revealElements =
-document.querySelectorAll(
-".featured-section, .story-section, .gallery-section, .planner-highlight, .social-section"
-);
+    if (
+      sectionTop <
+      window.innerHeight - 120
+    ) {
 
-function revealOnScroll(){
+      section.style.opacity = "1";
 
-revealElements.forEach(
-(section)=>{
+      section.style.transform =
+        "translateY(0)";
+    }
 
-const top =
-section.getBoundingClientRect().top;
-
-if(top <
-window.innerHeight - 120){
-
-section.classList.add(
-"show-section"
-);
+  });
 
 }
 
-}
-);
+sections.forEach((section) => {
 
-}
+  section.style.opacity = "0";
+
+  section.style.transform =
+    "translateY(60px)";
+
+  section.style.transition =
+    "all .8s ease";
+
+});
 
 window.addEventListener(
-"scroll",
-revealOnScroll
+  "scroll",
+  revealSections
 );
 
-revealOnScroll();
+revealSections();
 
-/* ==========================
-   CATEGORY BUTTON ACTIVE STATE
-========================== */
+/* =================================
+   CATEGORY ACTIVE BUTTONS
+================================= */
 
-const buttons =
-document.querySelectorAll(
-".filter-btn"
-);
+const filterButtons =
+  document.querySelectorAll(".filter-btn");
 
-buttons.forEach((button)=>{
+filterButtons.forEach((button) => {
 
-button.addEventListener(
-"click",
-()=>{
+  button.addEventListener(
+    "click",
+    () => {
 
-buttons.forEach(btn=>{
+      filterButtons.forEach((btn) => {
 
-btn.classList.remove(
-"active"
-);
+        btn.classList.remove("active");
+
+      });
+
+      button.classList.add("active");
+
+    }
+  );
 
 });
 
-button.classList.add(
-"active"
-);
-
-}
-);
-
-});
-
-/* ==========================
-   PRODUCT CARD TILT EFFECT
-========================== */
+/* =================================
+   CARD TILT EFFECT
+================================= */
 
 const cards =
-document.querySelectorAll(
-".product-card"
-);
+  document.querySelectorAll(".product-card");
 
-cards.forEach((card)=>{
+cards.forEach((card) => {
 
-card.addEventListener(
-"mousemove",
-(e)=>{
+  card.addEventListener(
+    "mousemove",
+    (e) => {
 
-const rect =
-card.getBoundingClientRect();
+      const rect =
+        card.getBoundingClientRect();
 
-const x =
-e.clientX - rect.left;
+      const x =
+        e.clientX - rect.left;
 
-const y =
-e.clientY - rect.top;
+      const y =
+        e.clientY - rect.top;
 
-const rotateX =
-((y / rect.height)-0.5) * -10;
+      const rotateY =
+        ((x / rect.width) - 0.5) * 12;
 
-const rotateY =
-((x / rect.width)-0.5) * 10;
+      const rotateX =
+        ((y / rect.height) - 0.5) * -12;
 
-card.style.transform =
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateY(-15px)
+      `;
 
-`perspective(1000px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-10px)`;
+    }
+  );
+
+  card.addEventListener(
+    "mouseleave",
+    () => {
+
+      card.style.transform =
+        "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+    }
+  );
 
 });
 
-card.addEventListener(
-"mouseleave",
-()=>{
-
-card.style.transform =
-"perspective(1000px) rotateX(0deg) rotateY(0deg)";
-
-});
-
-});
-
-/* ==========================
+/* =================================
    HERO PARALLAX
-========================== */
+================================= */
 
-const heroArt =
-document.querySelector(
-".hero-art img"
-);
+const heroImage =
+  document.querySelector(".hero-art img");
 
-window.addEventListener(
-"scroll",
-()=>{
+window.addEventListener("scroll", () => {
 
-if(heroArt){
+  if (!heroImage) return;
 
-const value =
-window.scrollY * 0.15;
+  const value =
+    window.scrollY * 0.12;
 
-heroArt.style.transform =
-`translateY(${value}px)`;
-
-}
+  heroImage.style.transform =
+    `translateY(${value}px)`;
 
 });
 
-/* ==========================
-   LOADING ANIMATION
-========================== */
+/* =================================
+   HERO TEXT REVEAL
+================================= */
 
-window.addEventListener(
-"load",
-()=>{
+window.addEventListener("load", () => {
 
-document.body.classList.add(
-"loaded"
-);
+  const heroTitle =
+    document.querySelector(".hero h1");
+
+  const tagline =
+    document.querySelector(".tagline");
+
+  const intro =
+    document.querySelector(".intro-text");
+
+  if (heroTitle) {
+
+    heroTitle.style.opacity = "0";
+    heroTitle.style.transform =
+      "translateY(40px)";
+
+    setTimeout(() => {
+
+      heroTitle.style.transition =
+        "all .8s ease";
+
+      heroTitle.style.opacity = "1";
+
+      heroTitle.style.transform =
+        "translateY(0)";
+
+    }, 300);
+
+  }
+
+  if (tagline) {
+
+    tagline.style.opacity = "0";
+
+    setTimeout(() => {
+
+      tagline.style.transition =
+        "all .9s ease";
+
+      tagline.style.opacity = "1";
+
+    }, 700);
+
+  }
+
+  if (intro) {
+
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+
+      intro.style.transition =
+        "all 1s ease";
+
+      intro.style.opacity = "1";
+
+    }, 1000);
+
+  }
 
 });
