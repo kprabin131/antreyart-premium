@@ -461,6 +461,14 @@ color:var(--muted);
 padding:30px 8% 80px;
 }
 
+.product-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    align-items:start;
+}
+
 .product-card img{
     height:300px;
     object-fit:cover;
@@ -656,6 +664,8 @@ font-size:3.6rem;
 font-weight:600;
 line-height:1.15;
 }
+
+}
 /* =========================
    LARGE DESKTOP
 ========================= */
@@ -670,16 +680,10 @@ line-height:1.15;
     gap:80px;
   }
 
-.product-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    align-items:start;
-}
+    
 
   .gallery-grid{
-    columns:4;
+     grid-template-columns:repeat(4,1fr);
   }
 }
 
@@ -716,7 +720,7 @@ line-height:1.15;
   }
 
   .gallery-grid{
-    columns:2;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
@@ -738,7 +742,7 @@ line-height:1.15;
   }
 
   .gallery-grid{
-    columns:2;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
@@ -764,7 +768,7 @@ line-height:1.15;
   }
 
   .gallery-grid{
-    columns:1;
+    grid-template-columns:1fr;
   }
 
   .product-card img{
