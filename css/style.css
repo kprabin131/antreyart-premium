@@ -670,9 +670,13 @@ line-height:1.15;
     gap:80px;
   }
 
-  .product-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
+.product-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    align-items:start;
+}
 
   .gallery-grid{
     columns:4;
