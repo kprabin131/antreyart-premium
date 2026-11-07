@@ -802,7 +802,8 @@ line-height:1.15;
 }
 
 .product-grid{
-    display:grid !important;
-    grid-template-columns:repeat(4,1fr) !important;
-    border:10px solid red !important;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    align-items:start;
 }
