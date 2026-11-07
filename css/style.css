@@ -321,10 +321,10 @@ drop-shadow(
 }
 
 .hero-store-logo{
-    width:100px;
-    max-width:100%;
+    width:110px;
+    height:auto;
     display:block;
-    margin-bottom:20px;
+    margin-bottom:12px;
 }
 
 .tagline{
