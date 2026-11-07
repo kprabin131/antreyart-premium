@@ -533,23 +533,18 @@ margin-bottom:50px;
 }
 
 .gallery-grid{
-
-columns:3;
-
-column-gap:20px;
-
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
 .gallery-grid img{
-
-width:100%;
-
-margin-bottom:20px;
-
-border-radius:24px;
-
-transition:.4s;
-
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:24px;
+    display:block;
 }
 
 .gallery-grid img:hover{
@@ -660,4 +655,141 @@ width:320px;
 font-size:3.6rem;
 font-weight:600;
 line-height:1.15;
+}
+/* =========================
+   LARGE DESKTOP
+========================= */
+@media (min-width: 1600px){
+
+  .container{
+    max-width:1600px;
+    margin:auto;
+  }
+
+  .hero-inner{
+    gap:80px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .gallery-grid{
+    columns:4;
+  }
+}
+
+/* =========================
+   LAPTOP
+========================= */
+@media (max-width:1440px){
+
+  .hero-inner{
+    gap:50px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE
+========================= */
+@media (max-width:1024px){
+
+  .hero-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text{
+    max-width:100%;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-grid{
+    columns:2;
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT
+========================= */
+@media (max-width:768px){
+
+  h1{
+    font-size:2.8rem;
+  }
+
+  .hero-character{
+    width:300px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-grid{
+    columns:2;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width:425px){
+
+  h1{
+    font-size:2rem;
+  }
+
+  .hero{
+    padding:80px 20px;
+  }
+
+  .hero-character{
+    width:220px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    columns:1;
+  }
+
+  .product-card img{
+    height:280px;
+  }
+
+  .section-title{
+    font-size:2rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width:375px){
+
+  h1{
+    font-size:1.8rem;
+  }
+
+  .hero-character{
+    width:180px;
+  }
+
+  .shop-btn{
+    padding:14px 28px;
+  }
+
+  .product-card img{
+    height:250px;
+  }
 }
