@@ -320,6 +320,13 @@ drop-shadow(
 
 }
 
+.hero-store-logo{
+    width:100px;
+    max-width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
 .tagline{
 
 font-size:3rem;
