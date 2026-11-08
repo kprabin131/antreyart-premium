@@ -519,6 +519,17 @@ padding:30px 8% 80px;
     display:block;
 }
 
+.product-card h3{
+
+    min-height:80px;
+
+    line-height:1.25;
+
+    margin-top:15px;
+
+    margin-bottom:12px;
+}
+
 /* ================================================= */
 
 .story-section,
