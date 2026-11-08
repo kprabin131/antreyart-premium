@@ -1,22 +1,19 @@
 :root{
-
---bg:#f7f4ef;
-
+--bg:#faf7f2;
 --card:#ffffff;
+--text:#2c2724;
+--muted:#71655d;
 
---text:#2f2a27;
+--purple:#7a5ac8;
+--purple-light:#a98de8;
 
---muted:#6e625b;
+--yellow:#f2b13b;
+--yellow-light:#ffd978;
 
---purple:#84719d;
+--peach:#e8c7b6;
+--sage:#c8d3c1;
 
---purple-light:#a392bd;
-
---peach:#d8b2a9;
-
---sage:#bcc5b5;
-
---border:#e6dfd7;
+--border:#ebe3da;
 
 --shadow:
 0 20px 50px rgba(0,0,0,.08);
@@ -256,7 +253,7 @@ position:absolute;
 width:550px;
 height:550px;
 
-background:#eadcd3;
+background:#fff1c9;
 
 border-radius:50%;
 
@@ -280,7 +277,7 @@ position:absolute;
 width:350px;
 height:350px;
 
-background:#cad3c5;
+background:#d9c7ff;
 
 border-radius:50%;
 
@@ -425,11 +422,16 @@ border-color:var(--purple);
 }
 
 .filter-btn.active{
-
-background:var(--purple);
+background:linear-gradient(
+135deg,
+var(--purple),
+#6541b8
+);
 
 color:white;
 
+box-shadow:
+0 10px 25px rgba(122,90,200,.30);
 }
 
 /* ================================================= */
@@ -443,15 +445,31 @@ margin-bottom:50px;
 }
 
 .section-heading h2{
-
 font-size:3rem;
-
-font-weight:700;
-
+font-weight:800;
 margin-bottom:10px;
+color:var(--yellow);
 
+text-shadow:
+-1px -1px 0 #2f2a27,
+ 1px -1px 0 #2f2a27,
+-1px  1px 0 #2f2a27,
+ 1px  1px 0 #2f2a27;
 }
+.section-heading::after{
+content:"";
 
+display:block;
+
+width:60px;
+height:5px;
+
+background:var(--yellow);
+
+border-radius:30px;
+
+margin:15px auto 0;
+}
 .section-heading p{
 
 color:var(--muted);
@@ -465,10 +483,35 @@ padding:30px 8% 80px;
 }
 
 .product-grid{
-    display:grid !important;
-    grid-template-columns:repeat(4,1fr) !important;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
     gap:30px;
     align-items:start;
+}
+
+.product-card{
+    background:rgba(255,255,255,.95);
+    padding:20px;
+    border-radius:30px;
+
+    border:2px solid transparent;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.08);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+
+    border-color:#f2b13b;
+
+    box-shadow:
+    0 20px 50px rgba(122,90,200,.18);
 }
 
 .product-card img{
