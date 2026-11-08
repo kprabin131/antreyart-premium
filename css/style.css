@@ -677,9 +677,9 @@ footer{
     box-shadow:
     0 10px 25px rgba(0,0,0,.2);
 
-    display:none;
-
-    z-index:999;
+  display:block;
+background:red;
+z-index:99999;
 }
 
 #backToTop:hover{
