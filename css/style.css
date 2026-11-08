@@ -294,7 +294,7 @@ z-index:-2;
 
 .hero-content{
 
-max-width:550px;
+max-width:700px;
 
 }
 
@@ -319,22 +319,19 @@ drop-shadow(
     display:block;
     margin-bottom:12px;
 }
-   .hero-title{
+  .hero-title{
 
-    font-size:3rem;
-
-    color:#7a5ac8;
+    font-size:2.8rem;
 
     font-weight:700;
 
-    line-height:1.15;
+    line-height:1.1;
 
-    color:#7a5ac8;
+    color:var(--purple);
+
+    white-space:nowrap;
 
     margin-bottom:20px;
-
-    text-shadow:
-    0 4px 15px rgba(122,90,200,.15);
 }
 
     .hero-description{
@@ -347,7 +344,7 @@ drop-shadow(
 }
     .hero-title span{
 
-    color:#f2b13b;
+    color:var(--yellow);
 }
 
 
@@ -971,7 +968,10 @@ line-height:1.15;
     display:block;
   }
 
- 
+ .hero-title{
+    white-space:normal;
+    font-size:2.2rem;
+}
 
   .tagline{
     font-size:2.2rem;
