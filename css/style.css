@@ -636,28 +636,63 @@ font-weight:700;
 /* ================================================= */
 
 footer{
-
-background:white;
-
-padding:50px;
-
-text-align:center;
-
-margin-top:50px;
-
-border-top:
-1px solid var(--border);
-
+    background:white;
+    padding:50px;
+    text-align:center;
+    margin-top:50px;
+    border-top:1px solid var(--border);
 }
 
 .footer-logo img{
-
-height:70px;
-
-margin-bottom:15px;
-
+    height:70px;
+    margin-bottom:15px;
 }
 
+/* PASTE BACK TO TOP CSS HERE */
+
+#backToTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#7a5ac8;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+    display:none;
+
+    z-index:999;
+}
+
+#backToTop:hover{
+
+    transform:translateY(-4px);
+
+    background:#f2b13b;
+
+    color:#2f2a27;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES START HERE */
 /* ================================================= */
 
 @media(max-width:950px){
