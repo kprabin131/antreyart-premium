@@ -314,7 +314,7 @@ drop-shadow(
 }
 
 .hero-store-logo{
-    width:400px;
+    width:300px;
     height:auto;
     display:block;
     margin-bottom:12px;
@@ -965,6 +965,35 @@ line-height:1.15;
     margin:0 auto 15px;
     display:block;
   }
+
+    .hero-title{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    color:#7a5ac8;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 4px 15px rgba(122,90,200,.15);
+}
+
+    .hero-description{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+    .hero-title span{
+
+    color:#f2b13b;
+}
 
   .tagline{
     font-size:2.2rem;
