@@ -346,3 +346,37 @@ window.addEventListener("load", () => {
   }
 
 });
+
+/* =================================
+   BACK TO TOP
+================================= */
+
+const topBtn =
+document.getElementById("backToTop");
+
+if(topBtn){
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY > 300){
+
+            topBtn.style.display = "block";
+
+        }else{
+
+            topBtn.style.display = "none";
+
+        }
+
+    });
+
+    topBtn.addEventListener("click",()=>{
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+}
