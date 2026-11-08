@@ -350,31 +350,6 @@ drop-shadow(
     color:#f2b13b;
 }
 
-.tagline{
-
-font-size:3rem;
-
-font-weight:500;
-
-font-style:italic;
-
-line-height:1.4;
-
-color:var(--purple);
-
-margin-bottom:25px;
-
-}
-
-.intro-text{
-
-font-size:1.3rem;
-
-line-height:2;
-
-color:var(--muted);
-
-}
 
 /* ================================================= */
 
@@ -724,9 +699,9 @@ footer{
     box-shadow:
     0 10px 25px rgba(0,0,0,.2);
 
-  display:block;
-background:red;
-z-index:99999;
+ display:none;
+background:#7a5ac8;
+z-index:999;
 }
 
 #backToTop:hover{
