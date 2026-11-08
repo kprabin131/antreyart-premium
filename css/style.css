@@ -658,7 +658,7 @@ footer{
 
     margin-top:80px;
 
-    border-top:1px solid var(--border);
+    border-top:4px solid var(--yellow);
 }
 
 .footer-grid{
@@ -697,6 +697,10 @@ footer{
     margin-bottom:15px;
 
     color:var(--purple);
+
+    font-size:1.05rem;
+
+    font-weight:700;
 }
 
 .footer-column{
@@ -721,7 +725,9 @@ footer{
 
     color:var(--purple);
 
-    padding-left:6px;
+    padding-left:8px;
+
+    letter-spacing:.3px;
 }
 
 .footer-bottom{
