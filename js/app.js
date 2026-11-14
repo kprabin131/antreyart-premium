@@ -1,3 +1,41 @@
+const products = [
+{
+    id:1,
+    name:"One Day at a Time",
+    category:"Planner",
+    price:479,
+    image:"assets/Planner 1 front with backdrop.jpg",
+    description:"Daily planner designed to bring focus and mindfulness."
+},
+
+{
+    id:2,
+    name:"Stop Waiting for Tomorrow",
+    category:"Planner",
+    price:479,
+    image:"assets/Planner 2 with backdrop.jpg",
+    description:"Productivity planner for turning ideas into action."
+},
+
+{
+    id:3,
+    name:"The I Will Do It Later List",
+    category:"Memo Pad",
+    price:199,
+    image:"assets/Memo pad 1 with backdrop.jpg",
+    description:"Cute panda memo pad for notes and reminders."
+},
+
+{
+    id:4,
+    name:"Before You Forget Write It Down",
+    category:"Memo Pad",
+    price:199,
+    image:"assets/Memo Pad 2 with backdrop.jpg",
+    description:"Memo pad designed for quick note-taking."
+}
+];
+
 /* =================================
    MENU
 ================================= */
@@ -380,3 +418,5 @@ if(topBtn){
     });
 
 }
+
+renderProducts(products);
