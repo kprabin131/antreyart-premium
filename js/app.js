@@ -35,6 +35,35 @@ const products = [
     description:"Memo pad designed for quick note-taking."
 }
 ];
+function renderProducts(productList){
+
+    const grid = document.getElementById("productGrid");
+
+    if(!grid) return;
+
+    grid.innerHTML = "";
+
+    productList.forEach(product => {
+
+        grid.innerHTML += `
+        <div class="product-card">
+
+            <img
+            src="${product.image}"
+            alt="${product.name}">
+
+            <h3>${product.name}</h3>
+
+            <span class="price">
+                ₹${product.price}
+            </span>
+
+        </div>
+        `;
+
+    });
+
+}
 
 /* =================================
    MENU
