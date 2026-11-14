@@ -62,6 +62,7 @@ function renderProducts(productList){
         `;
 
     });
+        initializeCardTilt();
 
 }
 
@@ -282,39 +283,49 @@ filterButtons.forEach((button) => {
    CARD TILT EFFECT
 ================================= */
 
-const cards =
-  document.querySelectorAll(".product-card");
+function initializeCardTilt(){
 
-cards.forEach((card) => {
+    const cards =
+    document.querySelectorAll(".product-card");
 
-  card.addEventListener(
-    "mousemove",
-    (e) => {
+    cards.forEach((card)=>{
 
-      const rect =
-        card.getBoundingClientRect();
+        card.addEventListener("mousemove",(e)=>{
 
-      const x =
-        e.clientX - rect.left;
+            const rect =
+            card.getBoundingClientRect();
 
-      const y =
-        e.clientY - rect.top;
+            const x =
+            e.clientX - rect.left;
 
-      const rotateY =
-        ((x / rect.width) - 0.5) * 12;
+            const y =
+            e.clientY - rect.top;
 
-      const rotateX =
-        ((y / rect.height) - 0.5) * -12;
+            const rotateY =
+            ((x / rect.width) - 0.5) * 12;
 
-      card.style.transform = `
-        perspective(1000px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateY(-15px)
-      `;
+            const rotateX =
+            ((y / rect.height) - 0.5) * -12;
 
-    }
-  );
+            card.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-15px)
+            `;
+
+        });
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+        });
+
+    });
+
+}
 
   card.addEventListener(
     "mouseleave",
