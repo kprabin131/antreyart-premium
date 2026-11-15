@@ -272,6 +272,7 @@ filterButtons.forEach((button) => {
 
         const category =
         button.dataset.category;
+        console.log(category);
 
         if(category === "all"){
 
