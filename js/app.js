@@ -8,7 +8,6 @@ const products = [
 
     price:479,
 
-    image:"assets/Planner 1 front with backdrop.jpg",
 
     tagline:"Plan gently. Dream boldly.",
 
@@ -38,7 +37,12 @@ const products = [
 
     price:479,
 
-    image:"assets/Planner 2 with backdrop.jpg",
+images:[
+    "assets/Planner 2 with backdrop.jpg",
+    "assets/Planner 1 inside page with backdrop.jpg",
+    "assets/Both Planners Flat.jpg",
+    "assets/Both Planners overlapping.jpg"
+],
 
     tagline:"Tiny steps. Big progress.",
 
@@ -68,8 +72,12 @@ const products = [
 
     price:199,
 
-    image:"assets/Memo pad 1 with backdrop.jpg",
-
+images:[
+    "assets/Memo pad 1 with backdrop.jpg",
+    "assets/Both Memo Pads Flat.jpg",
+    "assets/Both Memo Pads Overlapping.jpg",
+    "assets/Memo pad 1 with backdrop.jpg"
+],
     tagline:"Save future-you some stress.",
 
     description:
@@ -98,8 +106,12 @@ const products = [
 
     price:199,
 
-    image:"assets/Memo Pad 2 with backdrop.jpg",
-
+images:[
+    "assets/Memo Pad 2 with backdrop.jpg",
+    "assets/Both Memo Pads Flat.jpg",
+    "assets/Both Memo Pads Overlapping.jpg",
+    "assets/Memo Pad 2 with backdrop.jpg"
+],
     tagline:"Catch ideas before they fly away.",
 
     description:
