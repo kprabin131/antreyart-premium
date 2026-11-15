@@ -215,11 +215,18 @@ searchBox.addEventListener("input", () => {
     .toLowerCase()
     .trim();
 
+    const resultCounter =
+    document.getElementById(
+        "searchResultCount"
+    );
+
     if(searchTerm === ""){
 
         renderProducts(products);
-        return;
 
+        resultCounter.textContent = "";
+
+        return;
     }
 
     const filteredProducts =
@@ -237,9 +244,19 @@ searchBox.addEventListener("input", () => {
 
     );
 
-    console.log(filteredProducts);
-
     renderProducts(filteredProducts);
+
+    if(filteredProducts.length === 0){
+
+        resultCounter.textContent =
+        "No products found";
+
+    }else{
+
+        resultCounter.textContent =
+        `${filteredProducts.length} product(s) found`;
+
+    }
 
 });
 /* =================================
