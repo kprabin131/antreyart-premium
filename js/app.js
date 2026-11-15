@@ -146,7 +146,11 @@ function renderProducts(productList){
 class="product-card"
 data-id="${product.id}">
             <img
-            src="${product.image}"
+<h3>${product.name}</h3>
+
+<p class="card-tagline">
+    ${product.tagline}
+</p>
             alt="${product.name}">
 
             <h3>${product.name}</h3>
