@@ -1499,3 +1499,22 @@ topBtn.addEventListener("click",()=>{
     font-weight:700;
 
 }
+.card-action{
+
+    margin-top:15px;
+
+    color:var(--purple);
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+    transition:.3s ease;
+
+}
+
+.product-card:hover .card-action{
+
+    transform:translateX(8px);
+
+}
