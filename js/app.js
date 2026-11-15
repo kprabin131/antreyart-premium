@@ -316,15 +316,6 @@ function initializeCardTilt(){
 
         });
 
-        card.addEventListener("mouseleave",()=>{
-
-            card.style.transform =
-            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-
-        });
-
-    });
-
 }
 
   card.addEventListener(
