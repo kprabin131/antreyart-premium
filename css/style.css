@@ -1460,3 +1460,20 @@ topBtn.addEventListener("click",()=>{
     font-weight:700;
 
 }
+.modal-creator-note{
+
+    background:#f7f1ff;
+
+    border-left:5px solid #7a5ac8;
+
+    padding:24px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    line-height:1.8;
+
+    color:#4c4457;
+
+}
