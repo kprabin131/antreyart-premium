@@ -585,6 +585,20 @@ product.images.forEach(image => {
                 "modalStory"
             ).textContent =
             product.story;
+            document.getElementById(
+    "modalCreatorNote"
+).innerHTML =
+
+`💜 <strong>A Note From Antreyart</strong>
+
+<br><br>
+
+Every Antreyart creation begins as a small sketch,
+a curious idea, or a playful doodle before becoming
+part of a collection.
+
+Thank you for supporting independent creativity
+and helping bring a little more art into everyday life.`;
 
             document.getElementById(
                 "modalReview"
