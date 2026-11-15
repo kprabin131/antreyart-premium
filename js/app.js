@@ -506,9 +506,49 @@ function initializeProductModal(){
 
             if(!product) return;
 
-            document.getElementById(
-                "modalImage"
-            ).src = product.image;
+          document.getElementById(
+    "modalImage"
+).src = product.images[0];
+            const thumbnailContainer =
+document.getElementById(
+    "modalThumbnailContainer"
+);
+
+thumbnailContainer.innerHTML = "";
+
+product.images.forEach(image => {
+
+    thumbnailContainer.innerHTML += `
+        <img
+        src="${image}"
+        class="modal-thumb">
+    `;
+
+});
+            setTimeout(()=>{
+
+    const thumbs =
+    document.querySelectorAll(
+        ".modal-thumb"
+    );
+
+    thumbs.forEach(thumb=>{
+
+        thumb.addEventListener(
+            "click",
+            ()=>{
+
+                document.getElementById(
+                    "modalImage"
+                ).src =
+                thumb.src;
+
+            }
+        );
+
+    });
+
+},100);
 
             document.getElementById(
                 "modalCategory"
