@@ -1,38 +1,122 @@
 const products = [
 {
     id:1,
+
     name:"One Day at a Time",
+
     category:"Planner",
+
     price:479,
+
     image:"assets/Planner 1 front with backdrop.jpg",
-    description:"Daily planner designed to bring focus and mindfulness."
+
+    tagline:"Plan gently. Dream boldly.",
+
+    description:
+    "A planner created for quiet mornings, slow progress and meaningful days.",
+
+    story:
+    "Designed to help you focus on progress rather than perfection, one page at a time.",
+
+    highlights:[
+        "Monthly Planning",
+        "Goal Setting",
+        "Reflection Pages",
+        "Habit Tracking"
+    ],
+
+    review:
+    "Every page feels encouraging and surprisingly calming."
 },
 
 {
     id:2,
+
     name:"Stop Waiting for Tomorrow",
+
     category:"Planner",
+
     price:479,
+
     image:"assets/Planner 2 with backdrop.jpg",
-    description:"Productivity planner for turning ideas into action."
+
+    tagline:"Tiny steps. Big progress.",
+
+    description:
+    "Built for dreamers who are ready to start today.",
+
+    story:
+    "A planner that transforms ideas into actions and intentions into habits.",
+
+    highlights:[
+        "Daily Planning",
+        "Weekly Focus",
+        "Goal Tracking",
+        "Progress Reviews"
+    ],
+
+    review:
+    "The layouts make planning easy instead of overwhelming."
 },
 
 {
     id:3,
+
     name:"The I Will Do It Later List",
+
     category:"Memo Pad",
+
     price:199,
+
     image:"assets/Memo pad 1 with backdrop.jpg",
-    description:"Cute panda memo pad for notes and reminders."
+
+    tagline:"Save future-you some stress.",
+
+    description:
+    "A playful memo pad for reminders, ideas and everything in between.",
+
+    story:
+    "Because great ideas deserve to be remembered before they disappear.",
+
+    highlights:[
+        "Easy Tear Sheets",
+        "Cute Panda Design",
+        "Daily Notes",
+        "To-Do Lists"
+    ],
+
+    review:
+    "The cutest way to stay organised."
 },
 
 {
     id:4,
-    name:"Before You Forget Write It Down",
+
+    name:"Before You Forget",
+
     category:"Memo Pad",
+
     price:199,
+
     image:"assets/Memo Pad 2 with backdrop.jpg",
-    description:"Memo pad designed for quick note-taking."
+
+    tagline:"Catch ideas before they fly away.",
+
+    description:
+    "A cheerful space for thoughts, reminders and sudden inspiration.",
+
+    story:
+    "Perfect for desks, study spaces and moments of creativity.",
+
+    highlights:[
+        "Quick Notes",
+        "Creative Prompts",
+        "Personal Reminders",
+        "Cute Illustrations"
+    ],
+
+    review:
+    "My desk finally feels organised and fun."
 }
 ];
 function renderProducts(productList){
