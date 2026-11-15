@@ -923,10 +923,14 @@ document
 
     renderCart();
 
-    document.getElementById(
-        "cartCount"
-    ).textContent =
-    cart.length;
+   document.getElementById(
+    "cartCount"
+).textContent =
+cart.reduce(
+    (total,item)=>
+    total + item.quantity,
+    0
+);
 
     const toast =
     document.getElementById(
