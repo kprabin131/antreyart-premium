@@ -283,49 +283,9 @@ filterButtons.forEach((button) => {
    CARD TILT EFFECT
 ================================= */
 
-function initializeCardTilt(){
-*    const cards =
-    document.que*ySelectorAll(".product-card");
-
-  * cards.forEach((card)=>{
-
-        *ard.addEventListener("mousemove",(*)=>{
-
-            const rect =
-   *        card.getBoundingClientRect*);
-
-            const x =
-        *   e.clientX - rect.left;
-
-       *    const y =
-            e.client* - rect.top;
-
-            const ro*ateY =
-            ((x / rect.widt*) - 0.5) * 12;
-
-            const *otateX =
-            ((y / rect.he*ght) - 0.5) * -12;
-
-            ca*d.style.transform = `
-            *erspective(1000px)
-            rot*teX(${rotateX}deg)
-            rot*teY(${rotateY}deg)
-            tra*slateY(-15px)
-            `;
-
-    *   });
-
-        card.addEventListe*er("mouseleave",()=>{
-
-           *card.style.transform =
-           *"perspective(1000px) rotateX(0deg) rotateY(0deg)";
-
-        });
-
-    });
-
+function initializeCardTilt() {
+    console.log("Tilt initialized");
 }
-
 /* =================================
    HERO PARALLAX
 ================================= */
