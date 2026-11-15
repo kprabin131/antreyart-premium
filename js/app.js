@@ -489,18 +489,9 @@ if(category === "all"){
 ================================= */
 
 function initializeCardTilt() {
-    document
-.getElementById("closeModal")
-.addEventListener("click",()=>{
-
-    document
-    .getElementById("productModal")
-    .style.display =
-    "none";
-
-});
-    console.log("Tilt initialized");
+    // Reserved for future tilt animation
 }
+
 
 function initializeProductModal(){
 
@@ -742,6 +733,16 @@ if(topBtn){
     });
 
 }
+document
+.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("productModal")
+    .style.display =
+    "none";
+
+});
 
 console.log("Tilt initialized");
 
