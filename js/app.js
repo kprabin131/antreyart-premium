@@ -406,4 +406,8 @@ if(topBtn){
 
 }
 
+console.log("Products Array:", products);
+
 renderProducts(products);
+
+console.log("Render Completed");
