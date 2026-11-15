@@ -874,6 +874,8 @@ document
 .getElementById("addToCartBtn")
 .addEventListener("click",()=>{
 
+    console.log("ADD TO CART CLICKED");
+
     if(!selectedProduct) return;
 
     cart.push(selectedProduct);
