@@ -169,6 +169,9 @@ data-id="${product.id}">
     <span class="price">
         ₹${product.price}
     </span>
+    <div class="card-action">
+    View Details →
+</div>
 
 </div>
         `;
