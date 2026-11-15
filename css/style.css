@@ -519,18 +519,14 @@ padding:30px 8% 80px;
 
 .product-card h3{
 
-    min-height:80px;
-
-    display:flex;
-
-    align-items:flex-start;
-
     line-height:1.25;
 
-    margin-top:15px;
+    margin-top:16px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
+
 }
+
 
 /* ================================================= */
 
@@ -1443,21 +1439,28 @@ topBtn.addEventListener("click",()=>{
 
 .product-badge{
 
-    display:inline-block;
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    z-index:5;
 
     padding:8px 14px;
 
-    margin-bottom:15px;
-
     border-radius:999px;
 
-    background:#f7f1ff;
+    background:white;
 
     color:#7a5ac8;
 
-    font-size:.85rem;
+    font-size:.8rem;
 
     font-weight:700;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
 
 }
 .modal-creator-note{
