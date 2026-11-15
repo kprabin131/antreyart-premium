@@ -130,8 +130,9 @@ function renderProducts(productList){
     productList.forEach(product => {
 
         grid.innerHTML += `
-        <div class="product-card">
-
+<div
+class="product-card"
+data-id="${product.id}">
             <img
             src="${product.image}"
             alt="${product.name}">
@@ -147,6 +148,7 @@ function renderProducts(productList){
 
     });
         initializeCardTilt();
+    initializeProductModal();
 
 }
 
@@ -460,7 +462,99 @@ if(category === "all"){
 ================================= */
 
 function initializeCardTilt() {
+    document
+.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("productModal")
+    .style.display =
+    "none";
+
+});
     console.log("Tilt initialized");
+}
+
+function initializeProductModal(){
+
+    const cards =
+    document.querySelectorAll(".product-card");
+
+    cards.forEach(card=>{
+
+        card.addEventListener("click",()=>{
+
+            const productId =
+            Number(card.dataset.id);
+
+            const product =
+            products.find(
+                p => p.id === productId
+            );
+
+            if(!product) return;
+
+            document.getElementById(
+                "modalImage"
+            ).src = product.image;
+
+            document.getElementById(
+                "modalCategory"
+            ).textContent =
+            product.category;
+
+            document.getElementById(
+                "modalTitle"
+            ).textContent =
+            product.name;
+
+            document.getElementById(
+                "modalTagline"
+            ).textContent =
+            product.tagline;
+
+            document.getElementById(
+                "modalPrice"
+            ).textContent =
+            `₹${product.price}`;
+
+            document.getElementById(
+                "modalDescription"
+            ).textContent =
+            product.description;
+
+            document.getElementById(
+                "modalStory"
+            ).textContent =
+            product.story;
+
+            document.getElementById(
+                "modalReview"
+            ).innerHTML =
+            `★★★★★<br><br>${product.review}`;
+
+            document.getElementById(
+                "modalHighlights"
+            ).innerHTML =
+            `
+            <h3>✨ What's Inside</h3>
+            <ul>
+                ${product.highlights
+                    .map(item =>
+                    `<li>${item}</li>`)
+                    .join("")}
+            </ul>
+            `;
+
+            document.getElementById(
+                "productModal"
+            ).style.display =
+            "flex";
+
+        });
+
+    });
+
 }
 /* =================================
    HERO PARALLAX
