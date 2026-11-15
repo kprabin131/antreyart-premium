@@ -205,6 +205,34 @@ setInterval(() => {
 }, 2500);
 
 /* =================================
+   LIVE SEARCH
+================================= */
+
+searchBox.addEventListener("input", () => {
+
+    const searchTerm =
+    searchBox.value.toLowerCase();
+
+    const filteredProducts =
+    products.filter(product =>
+
+        product.name
+        .toLowerCase()
+        .includes(searchTerm)
+
+        ||
+
+        product.category
+        .toLowerCase()
+        .includes(searchTerm)
+
+    );
+
+    renderProducts(filteredProducts);
+
+});
+
+/* =================================
    REVEAL ON SCROLL
 ================================= */
 
