@@ -329,20 +329,43 @@ filterButtons.forEach((button) => {
         button.dataset.category;
         console.log(category);
 
-        if(category === "all"){
+       const comingSoonMessage =
+document.getElementById(
+    "comingSoonMessage"
+);
 
-            renderProducts(products);
+if(category === "all"){
 
-        }else{
+    renderProducts(products);
 
-            const filteredProducts =
-            products.filter(product =>
-                product.category === category
-            );
+    comingSoonMessage.style.display =
+    "none";
 
-            renderProducts(filteredProducts);
+}else{
 
-        }
+    const filteredProducts =
+    products.filter(product =>
+        product.category === category
+    );
+
+    renderProducts(filteredProducts);
+
+    if(filteredProducts.length === 0){
+
+        comingSoonMessage.style.display =
+        "block";
+
+        comingSoonMessage.innerHTML =
+        `✨ ${category} collection is launching soon. Stay tuned!`;
+
+    }else{
+
+        comingSoonMessage.style.display =
+        "none";
+
+    }
+
+}
 
     });
 
