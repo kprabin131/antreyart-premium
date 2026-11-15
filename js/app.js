@@ -138,6 +138,8 @@ images:[
     "My desk finally feels organised and fun."
 }
 ];
+let cart = [];
+let selectedProduct = null;
 function renderProducts(productList){
 
     const grid = document.getElementById("productGrid");
@@ -451,7 +453,20 @@ document.getElementById(
 );
 
 if(category === "all"){
+document
+.getElementById("addToCartBtn")
+.addEventListener("click",()=>{
 
+    if(!selectedProduct) return;
+
+    cart.push(selectedProduct);
+
+    document.getElementById(
+        "cartCount"
+    ).textContent =
+    cart.length;
+
+});
     renderProducts(products);
 
     comingSoonMessage.style.display =
@@ -514,6 +529,7 @@ function initializeProductModal(){
             );
 
             if(!product) return;
+            selectedProduct = product;
 
           document.getElementById(
     "modalImage"
