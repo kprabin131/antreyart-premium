@@ -406,8 +406,5 @@ if(topBtn){
 
 }
 
-console.log("Products Array:", products);
+console.log("Tilt initialized");
 
-renderProducts(products);
-
-console.log("Render Completed");
