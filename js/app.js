@@ -138,7 +138,10 @@ images:[
     "My desk finally feels organised and fun."
 }
 ];
-let cart = [];
+let cart =
+JSON.parse(
+    localStorage.getItem("cart")
+) || [];
 let selectedProduct = null;
 function renderProducts(productList){
 
@@ -834,6 +837,10 @@ document
     if(!selectedProduct) return;
 
     cart.push(selectedProduct);
+    localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
     renderCart();
 
     document.getElementById(
@@ -875,5 +882,10 @@ document
     .classList.remove("open");
 
 });
+renderCart();
 
+document.getElementById(
+    "cartCount"
+).textContent =
+cart.length;
 renderProducts(products);
