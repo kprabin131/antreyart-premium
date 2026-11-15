@@ -1138,3 +1138,25 @@ topBtn.addEventListener("click",()=>{
     font-weight:600;
 
 }
+
+.coming-soon-message{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    color:var(--purple);
+
+    display:none;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:#f4effb;
+
+}
