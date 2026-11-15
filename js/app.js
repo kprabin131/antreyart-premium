@@ -7,7 +7,12 @@ const products = [
     category:"Planner",
 
     price:479,
-
+images:[
+    "assets/Planner 1 front with backdrop.jpg",
+    "assets/Planner 1 inside page with backdrop.jpg",
+    "assets/Both Planners Flat.jpg",
+    "assets/Both Planners overlapping.jpg"
+],
 
     tagline:"Plan gently. Dream boldly.",
 
@@ -145,21 +150,22 @@ function renderProducts(productList){
 <div
 class="product-card"
 data-id="${product.id}">
-            <img
-<h3>${product.name}</h3>
 
-<p class="card-tagline">
-    ${product.tagline}
-</p>
-            alt="${product.name}">
+    <img
+    src="${product.images[0]}"
+    alt="${product.name}">
 
-            <h3>${product.name}</h3>
+    <h3>${product.name}</h3>
 
-            <span class="price">
-                ₹${product.price}
-            </span>
+    <p class="card-tagline">
+        ${product.tagline}
+    </p>
 
-        </div>
+    <span class="price">
+        ₹${product.price}
+    </span>
+
+</div>
         `;
 
     });
