@@ -182,46 +182,8 @@ data-id="${product.id}">
         initializeCardTilt();
     initializeProductModal();
 
-    if(cart.length === 0){
+  
 
-        cartItems.innerHTML =
-        "Your cart is empty.";
-
-        subtotal.textContent =
-        "Subtotal: ₹0";
-
-        return;
-
-    }
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-    cart.forEach(item=>{
-
-        total += item.price;
-
-        cartItems.innerHTML += `
-            <div class="cart-item">
-
-                <strong>
-                    ${item.name}
-                </strong>
-
-                <br>
-
-                ₹${item.price}
-
-            </div>
-        `;
-
-    });
-
-    subtotal.textContent =
-    `Subtotal: ₹${total}`;
-
-}
 }
 function renderCart(){
 
@@ -235,44 +197,7 @@ function renderCart(){
         "cartSubtotal"
     );
 
-    if(cart.length === 0){
-
-        cartItems.innerHTML =
-        "Your cart is empty.";
-
-        subtotal.textContent =
-        "Subtotal: ₹0";
-
-        return;
-
-    }
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-    cart.forEach(item=>{
-
-        total += item.price;
-
-        cartItems.innerHTML += `
-            <div class="cart-item">
-
-                <strong>
-                    ${item.name}
-                </strong>
-
-                <br>
-
-                ₹${item.price}
-
-            </div>
-        `;
-
-    });
-
-    subtotal.textContent =
-    `Subtotal: ₹${total}`;
+   `Subtotal: ₹${total}`;
 
 }
 /* =================================
