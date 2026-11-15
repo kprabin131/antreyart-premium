@@ -1477,3 +1477,22 @@ topBtn.addEventListener("click",()=>{
     color:#4c4457;
 
 }
+.modal-badge{
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    padding:10px 16px;
+
+    background:#f7f1ff;
+
+    color:#7a5ac8;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
