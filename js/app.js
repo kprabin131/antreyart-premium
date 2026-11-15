@@ -791,7 +791,18 @@ document
         "cartCount"
     ).textContent =
     cart.length;
+const toast =
+document.getElementById(
+    "cartToast"
+);
 
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+},2000);
 });
 
 console.log("Tilt initialized");
