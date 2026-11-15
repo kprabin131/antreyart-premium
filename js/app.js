@@ -211,7 +211,16 @@ setInterval(() => {
 searchBox.addEventListener("input", () => {
 
     const searchTerm =
-    searchBox.value.toLowerCase();
+    searchBox.value
+    .toLowerCase()
+    .trim();
+
+    if(searchTerm === ""){
+
+        renderProducts(products);
+        return;
+
+    }
 
     const filteredProducts =
     products.filter(product =>
@@ -228,10 +237,11 @@ searchBox.addEventListener("input", () => {
 
     );
 
+    console.log(filteredProducts);
+
     renderProducts(filteredProducts);
 
 });
-
 /* =================================
    REVEAL ON SCROLL
 ================================= */
