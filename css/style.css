@@ -1440,3 +1440,23 @@ topBtn.addEventListener("click",()=>{
     border-color:#7a5ac8;
 
 }
+
+.product-badge{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    margin-bottom:15px;
+
+    border-radius:999px;
+
+    background:#f7f1ff;
+
+    color:#7a5ac8;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+}
