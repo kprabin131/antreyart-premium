@@ -213,8 +213,8 @@ function renderCart(){
 
     cart.forEach(item=>{
 
-        total += item.price;
-
+total +=
+item.price * item.quantity;
         cartItems.innerHTML += `
             <div class="cart-item">
 
@@ -222,8 +222,25 @@ function renderCart(){
 
                 <br>
 
-                ₹${item.price}
+<div class="cart-qty">
 
+    <button
+    onclick="decreaseQuantity(${item.id})">
+    -
+    </button>
+
+    <span>
+        ${item.quantity}
+    </span>
+
+    <button
+    onclick="increaseQuantity(${item.id})">
+    +
+    </button>
+
+</div>
+
+₹${item.price * item.quantity}
             </div>
         `;
 
@@ -231,6 +248,50 @@ function renderCart(){
 
     subtotal.textContent =
     `Subtotal: ₹${total}`;
+
+}
+function increaseQuantity(id){
+
+    const item =
+    cart.find(item =>
+        item.id === id
+    );
+
+    if(!item) return;
+
+    item.quantity++;
+    localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
+
+    renderCart();
+
+}
+function decreaseQuantity(id){
+
+    const item =
+    cart.find(item =>
+        item.id === id
+    );
+
+    if(!item) return;
+
+    item.quantity--;
+
+    if(item.quantity <= 0){
+
+        cart =
+        cart.filter(product =>
+            product.id !== id
+        );
+
+    }
+localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
+    renderCart();
 
 }
 /* =================================
@@ -817,6 +878,7 @@ if(topBtn){
         });
 
     });
+}
 document
 .getElementById("closeModal")
 .addEventListener("click",()=>{
@@ -827,43 +889,59 @@ document
     "none";
 
 });
-
 document
 .getElementById("addToCartBtn")
 .addEventListener("click",()=>{
 
-    console.log("ADD TO CART CLICKED");
-
     if(!selectedProduct) return;
 
-    cart.push(selectedProduct);
+    const existingItem =
+    cart.find(item =>
+        item.id === selectedProduct.id
+    );
+
+    if(existingItem){
+
+        existingItem.quantity++;
+
+    }else{
+
+        cart.push({
+
+            ...selectedProduct,
+
+            quantity:1
+
+        });
+
+    }
+
     localStorage.setItem(
-    "cart",
-    JSON.stringify(cart)
-);
+        "cart",
+        JSON.stringify(cart)
+    );
+
     renderCart();
 
     document.getElementById(
         "cartCount"
     ).textContent =
     cart.length;
-const toast =
-document.getElementById(
-    "cartToast"
-);
 
-toast.classList.add("show");
+    const toast =
+    document.getElementById(
+        "cartToast"
+    );
 
-setTimeout(()=>{
+    toast.classList.add("show");
 
-    toast.classList.remove("show");
+    setTimeout(()=>{
 
-},2000);
+        toast.classList.remove("show");
+
+    },2000);
+
 });
-
-console.log("Tilt initialized");
-}
-console.log("Tilt initialized");
 document
 .getElementById("cartIcon")
 .addEventListener("click",()=>{
@@ -888,4 +966,5 @@ document.getElementById(
     "cartCount"
 ).textContent =
 cart.length;
+
 renderProducts(products);
