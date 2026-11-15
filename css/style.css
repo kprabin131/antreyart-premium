@@ -1395,3 +1395,48 @@ topBtn.addEventListener("click",()=>{
     }
 
 }
+.main-modal-image{
+
+    width:100%;
+
+    border-radius:25px;
+
+    display:block;
+
+}
+
+.modal-thumbnail-container{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.modal-thumbnail-container img{
+
+    width:80px;
+
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    border:3px solid transparent;
+
+    transition:.3s;
+
+}
+
+.modal-thumbnail-container img:hover{
+
+    border-color:#7a5ac8;
+
+}
