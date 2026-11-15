@@ -13,7 +13,7 @@ images:[
     "assets/Both Planners Flat.jpg",
     "assets/Both Planners overlapping.jpg"
 ],
-
+badge:"✨ Featured Favourite",
     tagline:"Plan gently. Dream boldly.",
 
     description:
@@ -48,7 +48,7 @@ images:[
     "assets/Both Planners Flat.jpg",
     "assets/Both Planners overlapping.jpg"
 ],
-
+badge:"🌟 Best Seller",
     tagline:"Tiny steps. Big progress.",
 
     description:
@@ -83,6 +83,7 @@ images:[
     "assets/Both Memo Pads Overlapping.jpg",
     "assets/Memo pad 1 with backdrop.jpg"
 ],
+    badge:"🎨 Creative Essential",
     tagline:"Save future-you some stress.",
 
     description:
@@ -117,6 +118,7 @@ images:[
     "assets/Both Memo Pads Overlapping.jpg",
     "assets/Memo Pad 2 with backdrop.jpg"
 ],
+    badge:"💡 Desk Favourite",
     tagline:"Catch ideas before they fly away.",
 
     description:
@@ -155,8 +157,11 @@ data-id="${product.id}">
     src="${product.images[0]}"
     alt="${product.name}">
 
-    <h3>${product.name}</h3>
+<div class="product-badge">
+    ${product.badge}
+</div>
 
+<h3>${product.name}</h3>
     <p class="card-tagline">
         ${product.tagline}
     </p>
