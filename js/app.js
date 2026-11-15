@@ -555,7 +555,10 @@ product.images.forEach(image => {
     });
 
 },100);
-
+document.getElementById(
+    "modalBadge"
+).textContent =
+product.badge;
             document.getElementById(
                 "modalCategory"
             ).textContent =
@@ -585,7 +588,7 @@ product.images.forEach(image => {
                 "modalStory"
             ).textContent =
             product.story;
-            document.getElementById(
+         document.getElementById(
     "modalCreatorNote"
 ).innerHTML =
 
@@ -593,17 +596,31 @@ product.images.forEach(image => {
 
 <br><br>
 
-Every Antreyart creation begins as a small sketch,
-a curious idea, or a playful doodle before becoming
-part of a collection.
+Every Antreyart creation starts as a spark
+of imagination, a small sketch, or a playful
+doodle before becoming part of a collection.
 
-Thank you for supporting independent creativity
-and helping bring a little more art into everyday life.`;
+Our hope is that every page, list and planner
+adds a little more creativity, calm and joy
+to everyday life.
+
+<br><br>
+
+✨ A little art in everything.`;
 
             document.getElementById(
-                "modalReview"
-            ).innerHTML =
-            `★★★★★<br><br>${product.review}`;
+    "modalReview"
+).innerHTML =
+
+`<strong>★★★★★</strong>
+
+<br><br>
+
+"${product.review}"
+
+<br><br>
+
+— The Antreyart Community`;
 
             document.getElementById(
                 "modalHighlights"
