@@ -258,24 +258,37 @@ revealSections();
 ================================= */
 
 const filterButtons =
-  document.querySelectorAll(".filter-btn");
+document.querySelectorAll(".filter-btn");
 
 filterButtons.forEach((button) => {
 
-  button.addEventListener(
-    "click",
-    () => {
+    button.addEventListener("click", () => {
 
-      filterButtons.forEach((btn) => {
+        filterButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
 
-        btn.classList.remove("active");
+        button.classList.add("active");
 
-      });
+        const category =
+        button.dataset.category;
 
-      button.classList.add("active");
+        if(category === "all"){
 
-    }
-  );
+            renderProducts(products);
+
+        }else{
+
+            const filteredProducts =
+            products.filter(product =>
+                product.category === category
+            );
+
+            renderProducts(filteredProducts);
+
+        }
+
+    });
 
 });
 
