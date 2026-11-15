@@ -768,8 +768,6 @@ if(topBtn){
         });
 
     });
-
-}
 document
 .getElementById("closeModal")
 .addEventListener("click",()=>{
@@ -780,6 +778,7 @@ document
     "none";
 
 });
+
 document
 .getElementById("addToCartBtn")
 .addEventListener("click",()=>{
@@ -794,5 +793,9 @@ document
     cart.length;
 
 });
+
+console.log("Tilt initialized");
+}
 console.log("Tilt initialized");
 
+renderProducts(products);
