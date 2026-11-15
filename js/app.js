@@ -284,42 +284,41 @@ filterButtons.forEach((button) => {
 ================================= */
 
 function initializeCardTilt(){
+*    const cards =
+    document.que*ySelectorAll(".product-card");
 
-    const cards =
-    document.querySelectorAll(".product-card");
+  * cards.forEach((card)=>{
 
-    cards.forEach((card)=>{
-
-        card.addEventListener("mousemove",(e)=>{
+        *ard.addEventListener("mousemove",(*)=>{
 
             const rect =
-            card.getBoundingClientRect();
+   *        card.getBoundingClientRect*);
 
             const x =
-            e.clientX - rect.left;
+        *   e.clientX - rect.left;
 
-            const y =
-            e.clientY - rect.top;
+       *    const y =
+            e.client* - rect.top;
 
-            const rotateY =
-            ((x / rect.width) - 0.5) * 12;
+            const ro*ateY =
+            ((x / rect.widt*) - 0.5) * 12;
 
-            const rotateX =
-            ((y / rect.height) - 0.5) * -12;
+            const *otateX =
+            ((y / rect.he*ght) - 0.5) * -12;
 
-            card.style.transform = `
-            perspective(1000px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateY(-15px)
+            ca*d.style.transform = `
+            *erspective(1000px)
+            rot*teX(${rotateX}deg)
+            rot*teY(${rotateY}deg)
+            tra*slateY(-15px)
             `;
 
-        });
+    *   });
 
-        card.addEventListener("mouseleave",()=>{
+        card.addEventListe*er("mouseleave",()=>{
 
-            card.style.transform =
-            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+           *card.style.transform =
+           *"perspective(1000px) rotateX(0deg) rotateY(0deg)";
 
         });
 
