@@ -188,14 +188,10 @@ data-id="${product.id}">
 function renderCart(){
 
     const cartItems =
-    document.getElementById(
-        "cartItems"
-    );
+    document.getElementById("cartItems");
 
     const subtotal =
-    document.getElementById(
-        "cartSubtotal"
-    );
+    document.getElementById("cartSubtotal");
 
     if(cart.length === 0){
 
@@ -206,7 +202,6 @@ function renderCart(){
         "Subtotal: ₹0";
 
         return;
-
     }
 
     let total = 0;
@@ -220,9 +215,7 @@ function renderCart(){
         cartItems.innerHTML += `
             <div class="cart-item">
 
-                <strong>
-                    ${item.name}
-                </strong>
+                <strong>${item.name}</strong>
 
                 <br>
 
