@@ -181,7 +181,58 @@ data-id="${product.id}">
     });
         initializeCardTilt();
     initializeProductModal();
+function renderCart(){
 
+    const cartItems =
+    document.getElementById(
+        "cartItems"
+    );
+
+    const subtotal =
+    document.getElementById(
+        "cartSubtotal"
+    );
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML =
+        "Your cart is empty.";
+
+        subtotal.textContent =
+        "Subtotal: ₹0";
+
+        return;
+
+    }
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach(item=>{
+
+        total += item.price;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+
+                <strong>
+                    ${item.name}
+                </strong>
+
+                <br>
+
+                ₹${item.price}
+
+            </div>
+        `;
+
+    });
+
+    subtotal.textContent =
+    `Subtotal: ₹${total}`;
+
+}
 }
 
 /* =================================
@@ -786,6 +837,7 @@ document
     if(!selectedProduct) return;
 
     cart.push(selectedProduct);
+    renderCart();
 
     document.getElementById(
         "cartCount"
@@ -808,5 +860,23 @@ setTimeout(()=>{
 console.log("Tilt initialized");
 }
 console.log("Tilt initialized");
+document
+.getElementById("cartIcon")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("cartDrawer")
+    .classList.add("open");
+
+});
+document
+.getElementById("closeCart")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("cartDrawer")
+    .classList.remove("open");
+
+});
 
 renderProducts(products);
