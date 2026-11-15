@@ -1574,3 +1574,38 @@ line-height:1.15;
     font-weight:700;
 
 }
+.cart-toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#7a5ac8;
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s ease;
+
+    z-index:999999;
+
+}
+
+.cart-toast.show{
+
+    opacity:1;
+
+}
