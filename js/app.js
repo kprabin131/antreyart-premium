@@ -143,6 +143,19 @@ JSON.parse(
     localStorage.getItem("cart")
 ) || [];
 let selectedProduct = null;
+function updateCartCount(){
+
+    document.getElementById(
+        "cartCount"
+    ).textContent =
+
+    cart.reduce(
+        (total,item) =>
+        total + item.quantity,
+        0
+    );
+
+}
 function renderProducts(productList){
 
     const grid = document.getElementById("productGrid");
@@ -266,6 +279,7 @@ function increaseQuantity(id){
 );
 
     renderCart();
+    updateCartCount();
 
 }
 function decreaseQuantity(id){
@@ -292,6 +306,7 @@ localStorage.setItem(
     JSON.stringify(cart)
 );
     renderCart();
+    updateCartCount();
 
 }
 /* =================================
@@ -966,9 +981,6 @@ document
 });
 renderCart();
 
-document.getElementById(
-    "cartCount"
-).textContent =
-cart.length;
+updateCartCount();
 
 renderProducts(products);
